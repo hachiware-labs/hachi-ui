@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Aurelia high-end landing page concept</title>
+  <desc id="desc">A refined landing page concept for a premium spatial intelligence platform with a quiet editorial layout and a luminous architectural SVG model.</desc>
+  <defs>
+    <radialGradient id="ambient" cx="58%" cy="36%" r="62%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.48" stop-color="#f7f4ee"/>
+      <stop offset="1" stop-color="#e9e5dc"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfaf5"/>
+      <stop offset="0.5" stop-color="#cfc7b8"/>
+      <stop offset="1" stop-color="#8c877b"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#224e5f"/>
+      <stop offset="0.5" stop-color="#b28c57"/>
+      <stop offset="1" stop-color="#1f6d64"/>
+    </linearGradient>
+    <filter id="object-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="36" stdDeviation="36" flood-color="#2a2b27" flood-opacity="0.18"/>
+    </filter>
+    <filter id="fine-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#2a2b27" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .font { font-family: Inter, Segoe UI, Arial, sans-serif; letter-spacing: 0; }
+      .serif { font-family: Georgia, Times New Roman, serif; letter-spacing: 0; }
+      .mono { font-family: Consolas, ui-monospace, monospace; letter-spacing: 0; }
+      .brand { font-size: 20px; font-weight: 760; fill: #252521; }
+      .nav { font-size: 14px; font-weight: 620; fill: #43423c; }
+      .eyebrow { font-size: 12px; font-weight: 760; fill: #7d6138; }
+      .h1 { font-size: 78px; font-weight: 500; fill: #22231f; }
+      .body { font-size: 21px; fill: #5b5b52; }
+      .small { font-size: 13px; fill: #6f6e65; }
+      .label { font-size: 12px; font-weight: 760; fill: #5d584d; }
+      .metric { font-size: 31px; font-weight: 760; fill: #252521; }
+      .button { font-size: 15px; font-weight: 720; fill: #fffdf7; }
+      .button-dark { font-size: 15px; font-weight: 720; fill: #252521; }
+      .cream { fill: #fffdf7; }
+    </style>
+  </defs>
+
+  <rect id="page" width="1440" height="1024" fill="url(#ambient)"/>
+
+  <g id="fine-grid" opacity="0.22">
+    <path d="M120 124 H1320" stroke="#9f9a8d" stroke-width="1"/>
+    <path d="M120 892 H1320" stroke="#9f9a8d" stroke-width="1"/>
+    <path d="M120 124 V892" stroke="#9f9a8d" stroke-width="1"/>
+    <path d="M1320 124 V892" stroke="#9f9a8d" stroke-width="1"/>
+    <path d="M720 124 V892" stroke="#9f9a8d" stroke-width="1"/>
+  </g>
+
+  <g id="navigation" class="font">
+    <circle cx="78" cy="68" r="15" fill="#252521"/>
+    <path d="M72 72 L78 58 L86 72 Z" fill="#fffdf7"/>
+    <text x="106" y="75" class="brand">Aurelia</text>
+    <text x="950" y="73" class="nav">Platform</text>
+    <text x="1054" y="73" class="nav">Studios</text>
+    <text x="1148" y="73" class="nav">Journal</text>
+    <rect x="1236" y="46" width="148" height="44" rx="8" fill="#252521"/>
+    <text x="1262" y="73" class="button">Request access</text>
+  </g>
+
+  <g id="hero-copy">
+    <text x="118" y="218" class="eyebrow mono">PRIVATE SPATIAL INTELLIGENCE</text>
+    <text x="116" y="324" class="h1 serif">The room</text>
+    <text x="116" y="407" class="h1 serif">understands</text>
+    <text x="116" y="490" class="h1 serif">before anyone</text>
+    <text x="116" y="573" class="h1 serif">speaks.</text>
+    <text x="122" y="642" class="body font">Aurelia converts architectural, environmental, and service</text>
+    <text x="122" y="674" class="body font">signals into quiet guidance for high-touch spaces.</text>
+    <rect x="122" y="734" width="178" height="56" rx="8" fill="#252521"/>
+    <text x="159" y="769" class="button font">Explore the model</text>
+    <rect x="318" y="734" width="154" height="56" rx="8" fill="none" stroke="#252521" stroke-width="1.5"/>
+    <text x="354" y="769" class="button-dark font">See use cases</text>
+  </g>
+
+  <g id="spatial-model" filter="url(#object-shadow)">
+    <path d="M836 242 L1176 344 L1126 650 L772 754 L622 512 Z" fill="#f8f5ee" stroke="#c4bdaf" stroke-width="2"/>
+    <path d="M836 242 L1176 344 L1002 418 L622 512 Z" fill="#fffdf8" stroke="#c4bdaf" stroke-width="2"/>
+    <path d="M622 512 L1002 418 L1126 650 L772 754 Z" fill="#e9e3d7" stroke="#c4bdaf" stroke-width="2"/>
+    <path d="M1002 418 L1176 344 L1126 650 Z" fill="#d8d0c1" stroke="#c4bdaf" stroke-width="2"/>
+
+    <g id="room-lines" opacity="0.72">
+      <path d="M694 530 L1014 450" stroke="#9b9386" stroke-width="1.4"/>
+      <path d="M746 617 L1074 520" stroke="#9b9386" stroke-width="1.4"/>
+      <path d="M812 704 L1130 610" stroke="#9b9386" stroke-width="1.4"/>
+      <path d="M734 444 L832 682" stroke="#9b9386" stroke-width="1.4"/>
+      <path d="M858 412 L940 716" stroke="#9b9386" stroke-width="1.4"/>
+      <path d="M994 378 L1042 682" stroke="#9b9386" stroke-width="1.4"/>
+    </g>
+
+    <path id="occupancy-flow" d="M696 580 C790 522 880 574 954 520 C1026 466 1052 410 1144 386" fill="none" stroke="url(#signal)" stroke-width="9" stroke-linecap="round"/>
+    <path id="service-flow" d="M742 682 C858 620 890 650 990 608 C1058 580 1084 566 1138 548" fill="none" stroke="#b28c57" stroke-width="5" stroke-dasharray="14 14" stroke-linecap="round"/>
+
+    <g id="signal-nodes" class="font">
+      <circle cx="696" cy="580" r="28" fill="#fffdf7" stroke="#224e5f" stroke-width="3"/>
+      <text x="678" y="585" class="label">Entry</text>
+      <circle cx="954" cy="520" r="36" fill="#fffdf7" stroke="#b28c57" stroke-width="3"/>
+      <text x="932" y="516" class="label">Salon</text>
+      <text x="933" y="535" class="small">+18%</text>
+      <circle cx="1144" cy="386" r="30" fill="#fffdf7" stroke="#1f6d64" stroke-width="3"/>
+      <text x="1128" y="391" class="label">Host</text>
+      <circle cx="1138" cy="548" r="26" fill="#fffdf7" stroke="#b28c57" stroke-width="3"/>
+      <text x="1124" y="553" class="label">Bar</text>
+    </g>
+  </g>
+
+  <g id="model-annotations" class="font">
+    <path d="M970 256 H1138 L1168 346" fill="none" stroke="#252521" stroke-width="1.6"/>
+    <rect x="850" y="222" width="206" height="58" rx="8" fill="#fffdf7" stroke="#d9d2c5" filter="url(#fine-shadow)"/>
+    <text x="870" y="246" class="label">Live ambience index</text>
+    <text x="870" y="270" class="small">Light, density, and service tempo.</text>
+
+    <path d="M1058 720 H1198 L1232 638" fill="none" stroke="#252521" stroke-width="1.6"/>
+    <rect x="1074" y="718" width="206" height="58" rx="8" fill="#fffdf7" stroke="#d9d2c5" filter="url(#fine-shadow)"/>
+    <text x="1094" y="742" class="label">Discreet recommendation</text>
+    <text x="1094" y="766" class="small">Open west lounge in 12 minutes.</text>
+  </g>
+
+  <g id="proof" class="font">
+    <rect x="118" y="872" width="1204" height="1" fill="#b9b2a5"/>
+    <g id="metric-one">
+      <text x="122" y="926" class="metric">42%</text>
+      <text x="122" y="954" class="small">faster guest recovery</text>
+    </g>
+    <g id="metric-two">
+      <text x="346" y="926" class="metric">11 min</text>
+      <text x="346" y="954" class="small">earlier service signal</text>
+    </g>
+    <g id="metric-three">
+      <text x="594" y="926" class="metric">0 cameras</text>
+      <text x="594" y="954" class="small">identity-free by design</text>
+    </g>
+    <text x="1040" y="926" class="small">Designed for hotels, galleries, private clubs,</text>
+    <text x="1040" y="954" class="small">and residences where attention must feel invisible.</text>
+  </g>
+</svg>

@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Revenue command dashboard concept</title>
+  <desc id="desc">A dense business application dashboard for revenue operations, centered on a forecast flow diagram with action queue, account table, and executive controls.</desc>
+  <defs>
+    <linearGradient id="page-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f6f1"/>
+      <stop offset="0.56" stop-color="#eef4f5"/>
+      <stop offset="1" stop-color="#f8f1e9"/>
+    </linearGradient>
+    <linearGradient id="flow-green" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1d8f74"/>
+      <stop offset="0.58" stop-color="#2f9b74"/>
+      <stop offset="1" stop-color="#1f5f8c"/>
+    </linearGradient>
+    <linearGradient id="flow-risk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d8a21a"/>
+      <stop offset="1" stop-color="#d64d32"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#172021" flood-opacity="0.1"/>
+    </filter>
+    <style>
+      .font { font-family: Inter, Segoe UI, Arial, sans-serif; letter-spacing: 0; }
+      .mono { font-family: Consolas, ui-monospace, monospace; letter-spacing: 0; }
+      .nav { font-size: 14px; font-weight: 690; fill: #dce5de; }
+      .nav-muted { font-size: 13px; fill: #87948c; }
+      .eyebrow { font-size: 12px; font-weight: 780; fill: #d64d32; }
+      .title { font-size: 32px; font-weight: 820; fill: #172021; }
+      .sub { font-size: 15px; fill: #5d6867; }
+      .h2 { font-size: 20px; font-weight: 780; fill: #172021; }
+      .label { font-size: 13px; fill: #5d6867; }
+      .small { font-size: 12px; fill: #687675; }
+      .metric { font-size: 36px; font-weight: 830; fill: #172021; }
+      .value { font-size: 18px; font-weight: 760; fill: #172021; }
+      .button { font-size: 13px; font-weight: 770; fill: #fffaf2; }
+      .button-dark { font-size: 13px; font-weight: 770; fill: #172021; }
+      .table-head { font-size: 11px; font-weight: 760; fill: #74807e; }
+      .table-text { font-size: 13px; fill: #24302f; }
+      .table-strong { font-size: 13px; font-weight: 760; fill: #172021; }
+      .inverse { fill: #fffaf2; }
+      .inverse-muted { fill: #b9c4bd; }
+    </style>
+  </defs>
+
+  <rect id="background" width="1440" height="1024" fill="url(#page-bg)"/>
+
+  <g id="sidebar" class="font">
+    <rect x="0" y="0" width="248" height="1024" fill="#172021"/>
+    <circle cx="40" cy="42" r="12" fill="#d64d32"/>
+    <circle cx="40" cy="42" r="4" fill="#fffaf2"/>
+    <text x="62" y="48" font-size="19" font-weight="820" fill="#fffaf2">RevOS</text>
+    <text x="28" y="104" class="nav-muted mono">WORKSPACE</text>
+    <rect x="20" y="124" width="208" height="42" rx="8" fill="#23302d"/>
+    <rect x="20" y="124" width="4" height="42" rx="2" fill="#1d8f74"/>
+    <text x="42" y="151" class="nav">Command center</text>
+    <text x="42" y="202" class="nav">Forecast</text>
+    <text x="42" y="248" class="nav">Pipeline</text>
+    <text x="42" y="294" class="nav">Accounts</text>
+    <text x="42" y="340" class="nav">Renewals</text>
+    <text x="42" y="386" class="nav">Teams</text>
+    <text x="28" y="466" class="nav-muted mono">SAVED VIEWS</text>
+    <text x="42" y="510" class="nav">Q3 board review</text>
+    <text x="42" y="550" class="nav">At-risk expansion</text>
+    <text x="42" y="590" class="nav">Enterprise slips</text>
+    <rect x="24" y="828" width="200" height="136" rx="8" fill="#22302c"/>
+    <text x="42" y="862" class="nav-muted mono">NEXT BRIEF</text>
+    <text x="42" y="898" class="nav">Monday exec readout</text>
+    <text x="42" y="925" class="nav-muted">11 unresolved deltas</text>
+  </g>
+
+  <g id="topbar" class="font">
+    <rect x="248" y="0" width="1192" height="82" fill="#fbfcf8" opacity="0.86"/>
+    <text x="286" y="35" class="eyebrow mono">REVENUE OPERATIONS / FY26 Q3</text>
+    <text x="286" y="64" class="title">Forecast health command center</text>
+    <rect x="944" y="24" width="184" height="38" rx="8" fill="#eef3ef" stroke="#d9e1dc"/>
+    <text x="965" y="48" class="button-dark">Global segment</text>
+    <path d="M1100 39 L1107 46 L1114 39" fill="none" stroke="#172021" stroke-width="2" stroke-linecap="round"/>
+    <rect x="1146" y="24" width="112" height="38" rx="8" fill="#172021"/>
+    <text x="1175" y="48" class="button">Reconcile</text>
+    <rect x="1272" y="24" width="128" height="38" rx="8" fill="#d64d32"/>
+    <text x="1300" y="48" class="button">Publish plan</text>
+  </g>
+
+  <g id="summary-strip" class="font">
+    <rect x="286" y="112" width="268" height="112" rx="8" fill="#fffdfa" stroke="#d9e1dc"/>
+    <text x="310" y="144" class="label">Commit forecast</text>
+    <text x="310" y="188" class="metric">$18.4M</text>
+    <text x="456" y="188" class="small" fill="#1d8f74">+6.2%</text>
+    <rect x="310" y="202" width="202" height="8" rx="4" fill="#e3e8e3"/>
+    <rect x="310" y="202" width="158" height="8" rx="4" fill="#1d8f74"/>
+
+    <rect x="574" y="112" width="238" height="112" rx="8" fill="#fffdfa" stroke="#d9e1dc"/>
+    <text x="598" y="144" class="label">Risk exposure</text>
+    <text x="598" y="188" class="metric">$2.7M</text>
+    <text x="728" y="188" class="small" fill="#d64d32">14 accounts</text>
+    <rect x="598" y="202" width="174" height="8" rx="4" fill="#e3e8e3"/>
+    <rect x="598" y="202" width="124" height="8" rx="4" fill="#d8a21a"/>
+
+    <rect x="832" y="112" width="238" height="112" rx="8" fill="#fffdfa" stroke="#d9e1dc"/>
+    <text x="856" y="144" class="label">Coverage</text>
+    <text x="856" y="188" class="metric">3.1x</text>
+    <text x="958" y="188" class="small" fill="#1f5f8c">healthy</text>
+    <rect x="856" y="202" width="174" height="8" rx="4" fill="#e3e8e3"/>
+    <rect x="856" y="202" width="142" height="8" rx="4" fill="#1f5f8c"/>
+
+    <rect x="1090" y="112" width="310" height="112" rx="8" fill="#172021"/>
+    <text x="1116" y="144" class="label inverse-muted">Decision needed</text>
+    <text x="1116" y="174" font-size="23" font-weight="820" fill="#fffaf2">Pull renewal risk</text>
+    <text x="1116" y="202" font-size="23" font-weight="820" fill="#fffaf2">into commit</text>
+  </g>
+
+  <g id="forecast-flow-panel" class="font" filter="url(#soft-shadow)">
+    <rect x="286" y="250" width="770" height="430" rx="8" fill="#fffdfa" stroke="#d9e1dc"/>
+    <text x="314" y="292" class="h2">Forecast flow</text>
+    <text x="314" y="318" class="sub">Movement from pipeline creation to recognized revenue, with risk carried forward.</text>
+    <g id="quarters" class="mono">
+      <text x="346" y="366" class="table-head">CREATE</text>
+      <text x="540" y="366" class="table-head">QUALIFY</text>
+      <text x="732" y="366" class="table-head">COMMIT</text>
+      <text x="918" y="366" class="table-head">CLOSE</text>
+      <line x1="388" y1="382" x2="388" y2="640" stroke="#e4ebe6"/>
+      <line x1="582" y1="382" x2="582" y2="640" stroke="#e4ebe6"/>
+      <line x1="774" y1="382" x2="774" y2="640" stroke="#e4ebe6"/>
+      <line x1="960" y1="382" x2="960" y2="640" stroke="#e4ebe6"/>
+    </g>
+
+    <g id="forecast-river">
+      <path d="M334 564 C426 490 492 566 586 505 C680 442 748 510 838 450 C914 400 970 420 1010 382" fill="none" stroke="#172021" stroke-width="56" stroke-linecap="round" opacity="0.08"/>
+      <path d="M334 564 C426 490 492 566 586 505 C680 442 748 510 838 450 C914 400 970 420 1010 382" fill="none" stroke="url(#flow-green)" stroke-width="24" stroke-linecap="round"/>
+      <path d="M334 604 C460 640 552 618 670 590 C780 564 842 610 1010 552" fill="none" stroke="url(#flow-risk)" stroke-width="16" stroke-linecap="round" stroke-dasharray="18 14"/>
+      <circle cx="586" cy="505" r="38" fill="#fffdfa" stroke="#1d8f74" stroke-width="4"/>
+      <text x="556" y="501" class="small" font-weight="780" fill="#172021">Expand</text>
+      <text x="558" y="522" class="small">$4.6M</text>
+      <circle cx="774" cy="502" r="52" fill="#fffdfa" stroke="#d64d32" stroke-width="5"/>
+      <circle cx="774" cy="502" r="68" fill="none" stroke="#d64d32" stroke-width="2" opacity="0.38"/>
+      <text x="738" y="496" class="small" font-weight="780" fill="#172021">Churn risk</text>
+      <text x="746" y="519" class="small">$1.1M</text>
+      <circle cx="1010" cy="382" r="42" fill="#fffdfa" stroke="#1f5f8c" stroke-width="4"/>
+      <text x="983" y="377" class="small" font-weight="780" fill="#172021">Close</text>
+      <text x="982" y="399" class="small">$6.8M</text>
+    </g>
+
+    <g id="annotations">
+      <path d="M802 408 L852 366 L932 366" fill="none" stroke="#172021" stroke-width="2"/>
+      <rect x="834" y="326" width="176" height="54" rx="8" fill="#fffdfa" stroke="#d9e1dc"/>
+      <text x="846" y="346" class="small" font-weight="780" fill="#172021">Main constraint</text>
+      <text x="846" y="368" class="small">Renewals slipped 9 days.</text>
+      <rect x="316" y="620" width="268" height="34" rx="8" fill="#eef3ef"/>
+      <text x="336" y="642" class="small">Green river: forecast entering commit</text>
+      <rect x="606" y="620" width="324" height="34" rx="8" fill="#fff3db"/>
+      <text x="626" y="642" class="small">Amber/red river: risk carried into executive review</text>
+    </g>
+  </g>
+
+  <g id="right-queue" class="font">
+    <rect x="1080" y="250" width="320" height="430" rx="8" fill="#fffdfa" stroke="#d9e1dc"/>
+    <text x="1108" y="292" class="h2">Action queue</text>
+    <text x="1108" y="318" class="sub">Highest leverage changes before publish.</text>
+
+    <g id="task-one">
+      <rect x="1108" y="350" width="264" height="82" rx="8" fill="#fff6ea" stroke="#e8d3ad"/>
+      <text x="1128" y="378" class="table-strong">Move Apex renewal</text>
+      <text x="1128" y="402" class="small">Pull risk into commit review</text>
+      <text x="1304" y="378" class="small" fill="#d64d32">P1</text>
+    </g>
+    <g id="task-two">
+      <rect x="1108" y="448" width="264" height="82" rx="8" fill="#f7faf7" stroke="#d9e1dc"/>
+      <text x="1128" y="476" class="table-strong">Confirm Northstar close</text>
+      <text x="1128" y="500" class="small">Legal review cleared yesterday</text>
+      <text x="1302" y="476" class="small" fill="#1d8f74">P2</text>
+    </g>
+    <g id="task-three">
+      <rect x="1108" y="546" width="264" height="82" rx="8" fill="#f7faf7" stroke="#d9e1dc"/>
+      <text x="1128" y="574" class="table-strong">Reassign FinOps owner</text>
+      <text x="1128" y="598" class="small">No activity for 6 business days</text>
+      <text x="1302" y="574" class="small" fill="#d8a21a">P2</text>
+    </g>
+    <rect x="1108" y="642" width="264" height="38" rx="8" fill="#172021"/>
+    <text x="1190" y="666" class="button">Apply queue</text>
+  </g>
+
+  <g id="accounts-table" class="font">
+    <rect x="286" y="708" width="1114" height="252" rx="8" fill="#fffdfa" stroke="#d9e1dc"/>
+    <text x="314" y="750" class="h2">Accounts changing the forecast</text>
+    <rect x="1046" y="724" width="144" height="36" rx="8" fill="#eef3ef" stroke="#d9e1dc"/>
+    <text x="1071" y="747" class="button-dark">At-risk only</text>
+    <rect x="1206" y="724" width="166" height="36" rx="8" fill="#eef3ef" stroke="#d9e1dc"/>
+    <text x="1234" y="747" class="button-dark">Export board</text>
+
+    <g id="table-head">
+      <rect x="314" y="780" width="1030" height="34" rx="6" fill="#f1f5f1"/>
+      <text x="334" y="802" class="table-head">ACCOUNT</text>
+      <text x="548" y="802" class="table-head">MOTION</text>
+      <text x="716" y="802" class="table-head">FORECAST</text>
+      <text x="874" y="802" class="table-head">SIGNAL</text>
+      <text x="1110" y="802" class="table-head">NEXT STEP</text>
+      <text x="1286" y="802" class="table-head">OWNER</text>
+    </g>
+
+    <g id="row-apex">
+      <line x1="314" y1="842" x2="1344" y2="842" stroke="#e5ebe6"/>
+      <circle cx="338" cy="836" r="8" fill="#d64d32"/>
+      <text x="358" y="841" class="table-strong">Apex Logistics</text>
+      <text x="548" y="841" class="table-text">Renewal</text>
+      <text x="716" y="841" class="table-text">$1.1M at risk</text>
+      <text x="874" y="841" class="table-text">Usage down 23%</text>
+      <text x="1110" y="841" class="table-text">Exec sponsor call</text>
+      <text x="1286" y="841" class="table-text">Mina</text>
+    </g>
+    <g id="row-northstar">
+      <line x1="314" y1="884" x2="1344" y2="884" stroke="#e5ebe6"/>
+      <circle cx="338" cy="878" r="8" fill="#1d8f74"/>
+      <text x="358" y="883" class="table-strong">Northstar Bank</text>
+      <text x="548" y="883" class="table-text">New logo</text>
+      <text x="716" y="883" class="table-text">$2.4M commit</text>
+      <text x="874" y="883" class="table-text">Legal cleared</text>
+      <text x="1110" y="883" class="table-text">Mutual close plan</text>
+      <text x="1286" y="883" class="table-text">Dev</text>
+    </g>
+    <g id="row-cinder">
+      <line x1="314" y1="926" x2="1344" y2="926" stroke="#e5ebe6"/>
+      <circle cx="338" cy="920" r="8" fill="#d8a21a"/>
+      <text x="358" y="925" class="table-strong">CinderWorks</text>
+      <text x="548" y="925" class="table-text">Expansion</text>
+      <text x="716" y="925" class="table-text">$780K upside</text>
+      <text x="874" y="925" class="table-text">Champion changed</text>
+      <text x="1110" y="925" class="table-text">Map new buying group</text>
+      <text x="1286" y="925" class="table-text">Aya</text>
+    </g>
+  </g>
+</svg>

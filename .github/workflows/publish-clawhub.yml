@@ -1,0 +1,28 @@
+name: Publish Hachi UI to ClawHub
+
+on:
+  workflow_dispatch:
+    inputs:
+      owner:
+        description: "ClawHub owner handle"
+        required: true
+        type: string
+      dry_run:
+        description: "Preview without publishing"
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    uses: openclaw/clawhub/.github/workflows/skill-publish.yml@main
+    with:
+      owner: ${{ inputs.owner }}
+      skill_path: skills/hachi-ui
+      dry_run: ${{ inputs.dry_run }}
+    secrets:
+      clawhub_token: ${{ secrets.CLAWHUB_TOKEN }}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Hachi UI"
+  short_description: "Beautiful SVG UI screen composition"
+  default_prompt: "Use $hachi-ui to design, score, and refine an editable SVG UI prototype screen for this product idea."
+
+policy:
+  allow_implicit_invocation: true
