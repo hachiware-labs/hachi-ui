@@ -5,6 +5,4 @@ __pycache__/
 .DS_Store
 
 test/
-examples/briefwell/
-examples/wireframe-briefwell-onboarding.svg
-examples/screenshots/wireframe-briefwell-onboarding.png
+examples/
