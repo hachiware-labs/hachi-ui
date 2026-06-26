@@ -90,5 +90,13 @@ $env:npm_config_cache = (Resolve-Path .\test).Path + '\npm-cache'
 $env:PIP_CACHE_DIR = (Resolve-Path .\test).Path + '\pip-cache'
 ```
 
-Generated prototype examples, screenshots, npm caches, and Python caches should stay untracked. Keep them under `examples/` or `test/` for local validation only.
+## Curated Examples
+
+This repository keeps only a small number of lightweight SVG examples:
+
+- `examples/wireframe-briefwell-onboarding.svg`: wireframe-first app flow with external screen contracts and transition triggers.
+- `examples/briefwell-boardroom.svg`: high-fidelity business app screen after a design-system pass.
+
+Generated screenshots, exploratory variants, per-project `DESIGN.md` files, npm caches, and Python caches should stay untracked. Keep local validation output under `examples/` or `test/`.
+
 

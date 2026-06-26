@@ -5,4 +5,10 @@ __pycache__/
 .DS_Store
 
 test/
-examples/
+examples/*
+!examples/
+!examples/README.md
+!examples/*.svg
+examples/screenshots/
+examples/**/screenshots/
+examples/**/DESIGN.md
