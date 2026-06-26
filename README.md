@@ -90,12 +90,5 @@ $env:npm_config_cache = (Resolve-Path .\test).Path + '\npm-cache'
 $env:PIP_CACHE_DIR = (Resolve-Path .\test).Path + '\pip-cache'
 ```
 
-## Example
-
-This repository includes a sample onboarding flow and design system:
-
-- `examples/wireframe-briefwell-onboarding.svg`
-- `examples/screenshots/wireframe-briefwell-onboarding.png`
-- `examples/briefwell/DESIGN.md`
-
+Generated prototype examples, screenshots, npm caches, and Python caches should stay untracked. Keep them under `examples/` or `test/` for local validation only.
 
