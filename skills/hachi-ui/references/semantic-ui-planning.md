@@ -15,15 +15,16 @@ A screen should not be a list of plausible components. It should be a semantic a
 3. Core objects
 4. User decision points
 5. Information units
-6. Information shapes
-7. Screen pattern
-8. Information-unit patterns
-9. Element mapping
-10. Area budget
-11. Gaze route
-12. State coverage
-13. Evidence/provenance needs
-14. Rejected patterns and why
+6. Input/view information patterns
+7. Information shapes
+8. Screen pattern
+9. Information-unit patterns
+10. Element mapping
+11. Area budget
+12. Gaze route
+13. State coverage
+14. Evidence/provenance needs
+15. Rejected patterns and why
 
 ## UI Element Plan Schema
 
@@ -43,6 +44,8 @@ user_decision_points:
 information_units:
   - id: final_answer
     label: "最終回答"
+    user_intent: view
+    shape_pattern: object_summary_view
     shape: long_text_summary
     role: primary_result
     user_question: "依頼への答えは何か？"
@@ -74,6 +77,12 @@ rejected_patterns:
   - name: generic_dashboard
     reason: "It hides the answer and evidence behind metrics."
 ```
+
+## Input And Viewing Information Patterns
+
+Use `information-shape-catalog.md` before choosing components. A UI plan should say whether each information unit is being entered, selected, edited, reviewed, verified, compared, or recovered. Then classify it as an input pattern such as `natural_language_request_input`, `structured_form_input`, `file_source_input`, `permission_scope_input`, or as a viewing pattern such as `dense_record_view`, `timeline_audit_view`, `evidence_provenance_view`, `metric_trend_view`, or `relationship_dependency_view`.
+
+If a plan says only `form`, `table`, `card`, `modal`, or `dashboard`, the information pattern is still underspecified.
 
 ## Pattern Layers
 
@@ -133,8 +142,12 @@ Redraw from the plan when:
 - long prompts or rubrics are squeezed into a narrow pane;
 - the chosen screen pattern fights the object model or is scored below 80 in `screen-pattern-quality-audit.md`;
 - state and evidence are represented only as generic badges;
+- input/view information patterns are not identified before choosing controls;
 - information units are not decomposed before choosing controls;
 - rejected patterns are not named, so the same mistake can return.
+
+
+
 
 
 
