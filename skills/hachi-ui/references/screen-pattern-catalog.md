@@ -1,13 +1,13 @@
 # Screen Pattern Catalog
 
-Use this catalog with `app-layout-patterns.md` when a product screen needs a more specific whole-screen pattern than a generic sidebar, dashboard, or split view. After choosing the whole-screen pattern, decompose it with `information-unit-patterns.md`, then choose atomic controls from `input-element-catalog.md`.
+Use this catalog with `app-layout-patterns.md` when a product screen needs a more specific whole-screen pattern than a generic sidebar, dashboard, or split view. Classify input/view information intent with `information-shape-catalog.md` first, choose the whole-screen pattern here, decompose it with `information-unit-patterns.md`, then choose atomic controls from `input-element-catalog.md`.
 
 ## Selection Inputs
 
 Choose from:
 
 - user job: request, inspect, edit, compare, verify, approve, configure, recover;
-- core object: Work, Run, AgentStep, Domain, File, Artifact, Account, Ticket, Item;
+- core object: Work, Run, AgentStep, Domain, File, Artifact, Account, Ticket, Item, Product, Order, Booking, Lesson, Goal, Thread, Collection;
 - information density: sparse, moderate, dense, archival;
 - editing burden: none, light, structured, long-form, table-heavy;
 - verification burden: none, evidence, audit, approval, regulated;
@@ -73,6 +73,28 @@ Choose from:
 39. Edit Preview Workbench
 40. Guided Setup / Migration Flow
 41. Mobile Field Task Flow
+
+### Activation, Access, Communication, And Data Quality
+
+42. Access Gate / Recovery
+43. First-Run Activation Checklist
+44. Object Creation Studio
+45. Notification / Activity Inbox
+46. Help / Support Resolution Center
+47. Data Quality Resolution Queue
+48. Communication Thread Console
+49. Relationship / Dependency Map
+
+### Consumer, Commerce, Learning, And Media
+
+50. Product Discovery / Commerce Browse
+51. Checkout / Commitment Flow
+52. Booking / Reservation Flow
+53. Learning Progress Workspace
+54. Lesson / Content Consumption
+55. Community Participation Hub
+56. Personal Goal / Habit Tracker
+57. Collection / Media Library
 
 > Use the index as vocabulary. Use the detailed pattern sections below to decide whether the screen deserves that pattern.
 
@@ -156,19 +178,21 @@ Use when users manage domains, knowledge files, artifact specs, rubrics, and pro
 
 ### Source Governance Library
 
-Use when browsing, uploading, tagging, and validating knowledge assets.
+Use when source assets must be trusted, governed, refreshed, and traced to product behavior.
 
-- Structure: filters, file table, upload zone, selected file details, validation state.
-- Good for: source libraries, policy repositories, document knowledge bases.
-- Required: processing, indexed, stale, invalid, duplicate.
+- Structure: source inventory, governance status, freshness/owner, validation findings, selected source detail, affected artifacts.
+- Good for: policy repositories, document knowledge bases, RAG source libraries, regulated source review.
+- Required: processing, indexed, stale, invalid, duplicate, ownerless, used-by relationship.
+- Avoid: generic file browsers that hide freshness, ownership, or downstream impact.
 
 ### Settings Dependency Map
 
-Use for permissions, integrations, feature flags, or dependency-heavy settings.
+Use when settings have dependencies, inheritance, risk, or downstream effects.
 
-- Structure: settings navigation, focused panel, dependency warnings, save/revert.
-- Good for: workspace preferences, integrations, defaults.
-- Required: dirty, saved, invalid, inherited, locked by role.
+- Structure: focused setting group, dependency map/list, impact preview, inherited source, save/revert, recovery note.
+- Good for: workspace defaults, model routing, data retention, security controls, integration defaults.
+- Required: dirty, saved, invalid, inherited, locked by role, downstream conflict.
+- Avoid: long undifferentiated settings pages with no impact model.
 
 ### Permission / Role Matrix
 
@@ -261,27 +285,30 @@ Use when history, compare, restore, and audit are key.
 
 ### Search Investigation Surface
 
-Use when the main task is finding and inspecting objects quickly.
+Use when search is not only retrieval, but investigation and rapid narrowing.
 
-- Structure: query, filters, result list, preview, highlighted match, empty state.
-- Good for: knowledge search, admin records, logs, people, documents.
-- Required: loading, no results, selected result, filter chips.
+- Structure: query, filters, ranked results, highlighted evidence, selected preview, saved/refined query, empty recovery.
+- Good for: knowledge search, audit search, admin records, logs, people, documents.
+- Required: loading, no results, selected result, relevance hint, filter chips, refined query state.
+- Avoid: a search box plus cards when the user must judge why a result matters.
 
 ### Template Decision Gallery
 
-Use when the user starts from reusable templates, examples, or presets.
+Use when the user must choose a reusable starting point by fit, risk, and adaptation effort.
 
-- Structure: category filters, template grid/list, preview, use/customize action.
-- Good for: workflow templates, report templates, prompt presets.
-- Required: selected template, preview, empty category, custom template.
+- Structure: category filters, ranked templates, fit criteria, selected preview, required changes, use/customize action.
+- Good for: workflow templates, report templates, prompt presets, onboarding recipes.
+- Required: selected template, preview, fit reason, empty category, custom template.
+- Avoid: decorative template grids with no decision criteria.
 
 ### Exception Command Center
 
-Use when status, anomalies, and decisions must be visible at once.
+Use when the screen exists to surface exceptions and make the next operational decision clear.
 
-- Structure: summary, flow or anomaly visualization, decision queue, evidence table.
+- Structure: current operating state, exception groups, decision queue, evidence table, recommended action, acknowledgement state.
 - Good for: operations, revenue, security, logistics, executive review.
-- Required: normal, warning, critical, acknowledged, recommended action.
+- Required: normal, warning, critical, acknowledged, owner, recommended action.
+- Avoid: executive KPI walls where nothing is actionable.
 
 ### Object Profile / 360 Detail
 
@@ -333,19 +360,21 @@ Use when assigning people/assets over time.
 
 ### Appointment Readiness Board
 
-Use when calendar events are operational objects with preparation and follow-up.
+Use when scheduled appointments require readiness, missing-prep detection, and follow-up.
 
-- Structure: time lane, event cards, readiness, agenda/evidence, follow-up queue.
-- Good for: executive meetings, healthcare, sales calls, service visits.
-- Required: upcoming, ready, missing prep, completed, follow-up.
+- Structure: time lane, appointment cards, readiness state, missing inputs, agenda/evidence, follow-up queue.
+- Good for: executive meetings, healthcare, sales calls, service visits, field operations.
+- Required: upcoming, ready, missing prep, completed, no-show, follow-up.
+- Avoid: generic calendars when events are not the decision object.
 
 ### Plan Usage Entitlement Console
 
-Use when plan, usage, invoices, limits, and payment state must be inspectable.
+Use when entitlement, limits, invoices, and payment state determine what the user can do next.
 
-- Structure: plan summary, usage meters, invoice table, payment method, alerts.
-- Good for: SaaS billing, API usage, quotas.
-- Required: over limit, trial, failed payment, invoice paid, upgrade.
+- Structure: entitlement summary, usage meters, limit forecast, invoice/payment table, upgrade or recovery action.
+- Good for: SaaS billing, API usage, quotas, enterprise seats, metered products.
+- Required: over limit, trial, failed payment, invoice paid, grace period, upgrade.
+- Avoid: finance-only billing pages that hide product impact.
 
 ### Report Builder
 
@@ -389,27 +418,30 @@ Use when spatial relationships matter.
 
 ### Edit Preview Workbench
 
-Use when editing directly affects preview, diff, or result.
+Use when a wide editing surface and a result preview must remain linked.
 
-- Structure: editor/config and live preview/result.
-- Good for: email builders, automations, workflows, reporting, design tools.
-- Required: draft, preview, validation errors, unsaved changes.
+- Structure: dominant editor/config surface, live preview/result, validation, selected output detail, publish/save action.
+- Good for: email builders, automations, workflows, reporting, design tools, prompt/result authoring.
+- Required: draft, preview, validation errors, unsaved changes, stale preview.
+- Avoid: arbitrary 50/50 splits when the editor or preview clearly deserves more area.
 
 ### Guided Setup / Migration Flow
 
-Use for setup, import, migration, publishing, or irreversible changes.
+Use when setup, import, migration, publishing, or irreversible changes need staged validation.
 
-- Structure: progress, current step, validation, next/back, completion.
-- Good for: OAuth connection, workspace setup, billing, deployment.
-- Required: incomplete, validating, failed validation, skipped optional, done.
+- Structure: progress, current requirement, validation result, preview of consequence, next/back, recovery, completion.
+- Good for: OAuth connection, workspace setup, billing, deployment, data migration.
+- Required: incomplete, validating, failed validation, skipped optional, blocked, done.
+- Avoid: wizard chrome when the user can safely finish from one screen.
 
 ### Mobile Field Task Flow
 
-Use for one focused mobile task.
+Use when mobile users need one focused field action with state and recovery.
 
-- Structure: header, object state, compact details, primary action near bottom.
-- Good for: capture, approval, field work, messaging, checklists.
-- Required: offline, draft, sync pending, destructive confirmation.
+- Structure: compact object header, task state, essential details, capture/input block, thumb-reachable primary action, sync/recovery state.
+- Good for: capture, approval, field work, messaging, checklists, inspections.
+- Required: offline, draft, sync pending, destructive confirmation, incomplete required input.
+- Avoid: shrinking a desktop dashboard into mobile columns.
 
 ### Access Gate / Recovery
 
@@ -482,6 +514,78 @@ Use when understanding connections, impact, or lineage is the user's main decisi
 - Good for: data lineage, integration dependencies, org relationships, workflow dependencies, permission inheritance.
 - Required: selected node, upstream/downstream, missing link, cycle/conflict, impact preview.
 - Avoid: decorative node diagrams without selectable relationships or consequences.
+
+### Product Discovery / Commerce Browse
+
+Use when the user compares products, offers, plans, or content before choosing one.
+
+- Structure: discovery filters, ranked item list/grid, comparison attributes, selected item preview, saved/compare action.
+- Good for: ecommerce, marketplaces, plan selection, catalog browsing, travel/product discovery.
+- Required: loading, no results, filtered results, selected item, unavailable item, saved/compared item.
+- Avoid: decorative card grids when fit criteria, price, availability, or comparison drive the decision.
+
+### Checkout / Commitment Flow
+
+Use when the user commits to purchase, subscribe, enroll, reserve, publish, or apply.
+
+- Structure: commitment summary, required details, cost/consequence, validation, payment/confirmation, recovery.
+- Good for: checkout, subscription purchase, enrollment, application submission, publishing.
+- Required: incomplete, invalid, payment pending, failed payment, confirmed, cancellation/undo when possible.
+- Avoid: single final button without consequence summary and error recovery.
+
+### Booking / Reservation Flow
+
+Use when availability, time, resource, and confirmation must be coordinated.
+
+- Structure: availability search, slot/resource options, selected option summary, required details, confirmation.
+- Good for: appointments, travel, rooms, service visits, events, classes.
+- Required: unavailable, conflicting, selected slot, waitlist, confirmed, reschedule/cancel.
+- Avoid: generic calendars when availability and commitment are the main work.
+
+### Learning Progress Workspace
+
+Use when the user must understand progress, next lesson, weak areas, and practice actions.
+
+- Structure: progress overview, current objective, weak/strong areas, recommended next action, history.
+- Good for: courses, onboarding education, coaching, training, certification.
+- Required: not started, in progress, completed, overdue, needs practice, passed/failed.
+- Avoid: static course lists that do not show the learner's next decision.
+
+### Lesson / Content Consumption
+
+Use when reading, watching, listening, or practicing is the primary surface.
+
+- Structure: content surface, progress/position, notes/highlights, related resources, next/complete action.
+- Good for: articles, lessons, videos, podcasts, tutorials, guided practice.
+- Required: current position, incomplete, completed, bookmarked, note/highlight, next item.
+- Avoid: burying the content behind navigation, cards, or promotional panels.
+
+### Community Participation Hub
+
+Use when users browse, contribute, react, moderate, or follow social/community activity.
+
+- Structure: feed or topic list, composer, selected discussion, participation state, moderation/reporting actions.
+- Good for: communities, forums, social products, internal collaboration, creator products.
+- Required: unread, draft, posted, replied, reported, muted, moderated.
+- Avoid: pure infinite feeds when the product's value depends on topic, object, or decision context.
+
+### Personal Goal / Habit Tracker
+
+Use when users set goals, record progress, review trends, and recover from lapses.
+
+- Structure: goal state, logging input, streak/progress, trend insight, next action, recovery prompt.
+- Good for: fitness, finance, health, learning, personal productivity.
+- Required: not logged, logged, missed, streak, milestone, reset/recovery.
+- Avoid: charts without a concrete next action or recovery path.
+
+### Collection / Media Library
+
+Use when users organize, revisit, filter, and act on saved content or assets.
+
+- Structure: collection navigation, filters, item grid/list, selected item preview, organization actions.
+- Good for: media libraries, bookmarks, files, playlists, asset managers, saved products.
+- Required: empty collection, selected item, unavailable item, duplicate, favorite, archived.
+- Avoid: flat galleries when organization, retrieval, or reuse is the user's job.
 ## Pattern Switch Rules
 
 - Hidden answer: switch to Work Intake + History Stack or Evidence Drilldown.
@@ -497,6 +601,10 @@ Use when understanding connections, impact, or lineage is the user's main decisi
 - Access failure: switch to Access Gate / Recovery.
 - Search task becomes diagnosis: switch from Search Investigation Surface to Evidence Drilldown or Data Quality Resolution Queue.
 - Relationship understanding dominates: switch to Relationship / Dependency Map.
+- Browsing becomes purchase/subscription/enrollment: switch to Checkout / Commitment Flow.
+- Availability is the primary constraint: switch to Booking / Reservation Flow.
+- Learning work dominates: switch to Learning Progress Workspace or Lesson / Content Consumption.
+- Saved content or media organization dominates: switch to Collection / Media Library.
 
 
 

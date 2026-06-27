@@ -11,6 +11,40 @@ For each information unit, answer:
 3. Does the user need speed, accuracy, auditability, comparison, confidence, or recovery?
 4. Does the information deserve inline treatment, a wide editor, a table, a drilldown, a graph, or a separate flow?
 
+## Canonical Slugs
+
+Use these slugs in UI Element Plans as `shape_pattern`.
+
+| Pattern | Slug |
+|---|---|
+| Identifier / Naming Input | `identifier_naming_input` |
+| Natural Language Request Input | `natural_language_request_input` |
+| Long-Form Authoring Input | `long_form_authoring_input` |
+| Structured Form Input | `structured_form_input` |
+| Rule / Condition / Action Input | `rule_condition_action_input` |
+| Choice / Classification Input | `choice_classification_input` |
+| Numeric / Threshold / Amount Input | `numeric_threshold_amount_input` |
+| File / Source Input | `file_source_input` |
+| Mapping / Relationship Input | `mapping_relationship_input` |
+| Permission / Scope Input | `permission_scope_input` |
+| Annotation / Spatial Input | `annotation_spatial_input` |
+| Credential / Secret Input | `credential_secret_input` |
+| Confirmation / Destructive Input | `confirmation_destructive_input` |
+| Object Summary View | `object_summary_view` |
+| Dense Record View | `dense_record_view` |
+| Detail Property View | `detail_property_view` |
+| Status / Readiness View | `status_readiness_view` |
+| Timeline / Audit View | `timeline_audit_view` |
+| Evidence / Provenance View | `evidence_provenance_view` |
+| Comparison / Diff View | `comparison_diff_view` |
+| Metric / Trend View | `metric_trend_view` |
+| Alert / Exception View | `alert_exception_view` |
+| Relationship / Dependency View | `relationship_dependency_view` |
+| Preview / Rendered Artifact View | `preview_rendered_artifact_view` |
+| Communication / Thread View | `communication_thread_view` |
+| Diagnostic / Validation View | `diagnostic_validation_view` |
+| Empty / First-Run View | `empty_first_run_view` |
+
 ## Input Information Patterns
 
 ### Identifier / Naming Input

@@ -62,6 +62,14 @@ Use this audit to keep the screen pattern catalog honest. It scores whether each
 | 47 | Data Quality Resolution Queue | 87 | Pass | Added common governance/cleanup pattern. |
 | 48 | Communication Thread Console | 82 | Watch | Added conversation-work pattern; avoid chat-first misuse. |
 | 49 | Relationship / Dependency Map | 86 | Pass | Added dependency/lineage pattern; relationships must be selectable and consequential. |
+| 50 | Product Discovery / Commerce Browse | 85 | Pass | Adds commerce and discovery coverage; requires fit criteria, availability, and comparison. |
+| 51 | Checkout / Commitment Flow | 86 | Pass | Adds commitment and purchase/enrollment coverage; requires consequence, validation, and recovery. |
+| 52 | Booking / Reservation Flow | 86 | Pass | Adds availability-driven flow coverage; distinguishes slots/resources from generic calendars. |
+| 53 | Learning Progress Workspace | 85 | Pass | Adds education/training coverage; centers progress, weak areas, and next action. |
+| 54 | Lesson / Content Consumption | 85 | Pass | Adds content-consumption coverage; keeps content dominant while preserving progress and notes. |
+| 55 | Community Participation Hub | 84 | Watch | Adds community/social coverage; must stay tied to topic, object, or participation decision. |
+| 56 | Personal Goal / Habit Tracker | 84 | Watch | Adds consumer self-tracking coverage; recovery from missed state is required. |
+| 57 | Collection / Media Library | 84 | Watch | Adds media/library coverage; must support organization and retrieval, not only display. |
 
 ## Replaced Patterns
 
@@ -87,7 +95,8 @@ The catalog now covers the common missing product cases that were not well repre
 - help/support diagnosis and escalation;
 - data quality cleanup and deduplication;
 - communication threads tied to work objects;
-- relationship, dependency, and lineage understanding.
+- relationship, dependency, and lineage understanding;
+- commerce discovery, checkout, booking, education, content consumption, community participation, personal goals, and media/collection management.
 
 ## Remaining Caution
 

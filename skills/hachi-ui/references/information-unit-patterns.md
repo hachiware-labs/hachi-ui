@@ -10,6 +10,28 @@ Use this catalog between whole-screen patterns and input/display elements. A scr
 4. Choose a unit pattern below for each important unit.
 5. Choose the final input/display elements from `input-element-catalog.md`.
 
+## Canonical Slugs
+
+Use these slugs in UI Element Plans as `unit_pattern`.
+
+| Pattern | Slug |
+|---|---|
+| Primary Answer / Result Block | `primary_answer_result_block` |
+| Work History Row | `work_history_row` |
+| Decision Queue Item | `decision_queue_item` |
+| Evidence Strip | `evidence_strip` |
+| Evidence Detail Panel | `evidence_detail_panel` |
+| Object Header | `object_header` |
+| Activity / Timeline Step | `activity_timeline_step` |
+| Validation State Block | `validation_state_block` |
+| Requirement Checklist Row | `requirement_checklist_row` |
+| Permission Scope Row | `permission_scope_row` |
+| Diff / Change Hunk | `diff_change_hunk` |
+| Metric Insight Block | `metric_insight_block` |
+| Alert Group | `alert_group` |
+| Empty State Activation Panel | `empty_state_activation_panel` |
+| Communication Thread Block | `communication_thread_block` |
+
 ## Unit Patterns
 
 ### Primary Answer / Result Block

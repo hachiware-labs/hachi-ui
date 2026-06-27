@@ -1,6 +1,6 @@
 # Hachi UI Skill
 
-Hachi UI is an agent skill for creating editable UI prototype screens as standalone SVG files. It is optimized for product UI work that needs to move from semantic UI planning, to semantic object/decision modeling, to input/view information classification, to whole-screen pattern selection, to information-unit decomposition, to input/display element selection, to a clear wireframe, to a reusable design system, and then to a higher-fidelity SVG prototype.
+Hachi UI is an agent skill for creating editable UI prototype screens as standalone SVG files. It is optimized for product UI work that needs to move from semantic object/decision modeling, to semantic UI planning, to input/view information classification, to whole-screen pattern selection, to information-unit decomposition, to input/display element selection, to a clear wireframe, to a reusable design system, and then to a higher-fidelity SVG prototype.
 
 ## Workflow
 
@@ -14,6 +14,16 @@ Hachi UI uses a staged workflow:
 6. **Design system pass**: after the wireframe is clear, create or update `DESIGN.md` with design tokens and rationale.
 7. **High-fidelity SVG**: apply the design system to an editable SVG screen or screen sequence.
 8. **Verification**: render the SVG, run the smoke check, and lint `DESIGN.md` when available.
+
+## Quick Route
+
+Use the smallest route that fits the request:
+
+- **Light single screen**: semantic primer, minimal plan, wireframe, rubric.
+- **Normal app/product screen**: primer, semantic plan, information shape, screen pattern, unit pattern, input/display element, wireframe.
+- **AI, audit, settings, import, approval, or regulated work**: normal route plus pattern quality audit and explicit evidence/provenance modeling.
+- **Multi-screen flow**: normal route plus screen family continuity, flow wireframe template, and onboarding patterns when relevant.
+- **High-fidelity or brand-sensitive work**: wireframe first, then design system and frontend art direction.
 
 ## DESIGN.md
 
@@ -108,6 +118,13 @@ Generated screenshots, exploratory variants, per-project `DESIGN.md` files, npm 
 ## Pattern Quality
 
 The semantic design entry point is `skills/hachi-ui/references/ui-semantic-design-primer.md`. The screen catalog is evaluated in `skills/hachi-ui/references/screen-pattern-quality-audit.md`. Patterns below 80 should be replaced or repaired rather than used as primary guidance. The catalog is layered: input/view information patterns live in `information-shape-catalog.md`, whole-screen patterns live in `screen-pattern-catalog.md`, middle-layer information units live in `information-unit-patterns.md`, and atomic controls/displays live in `input-element-catalog.md`.
+
+Current pattern coverage:
+
+- 27 input/view information patterns.
+- 57 whole-screen work patterns.
+- 15 information-unit patterns.
+- 47 input/display element patterns.
 
 
 

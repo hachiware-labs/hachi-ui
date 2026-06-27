@@ -1,6 +1,6 @@
 # App Layout Patterns
 
-Choose the layout pattern before drawing. Use this with `screen-pattern-catalog.md`: first map the brief to product thesis, user decisions, information units, information shapes, editing burden, and verification burden; then choose the whole-screen pattern. Do not default to a left sidebar or left/right split unless the user job requires it.
+Choose the layout pattern before drawing. Use this with `information-shape-catalog.md` and `screen-pattern-catalog.md`: first map the brief to product thesis, user decisions, information units, input/view information patterns, information shapes, editing burden, and verification burden; then choose the whole-screen pattern. Do not default to a left sidebar or left/right split unless the user job requires it.
 
 ## Split Layout Guardrail
 

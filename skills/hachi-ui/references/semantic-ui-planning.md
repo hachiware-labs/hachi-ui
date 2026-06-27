@@ -86,13 +86,14 @@ If a plan says only `form`, `table`, `card`, `modal`, or `dashboard`, the inform
 
 ## Pattern Layers
 
-Use three layers before drawing:
+Use four layers before drawing:
 
+- Input/view information pattern: the user's intent for each information unit, chosen from `information-shape-catalog.md`.
 - Whole-screen pattern: the complete working surface, chosen from `screen-pattern-catalog.md`.
 - Information-unit pattern: repeated or dominant blocks inside the screen, chosen from `information-unit-patterns.md`.
 - Input/display element: atomic controls and visual elements, chosen from `input-element-catalog.md`.
 
-Do not jump from a whole-screen pattern directly to buttons and cards when the screen contains evidence, queues, timelines, validation, permissions, diffs, metrics, alerts, empty states, or communication threads.
+Do not jump from a whole-screen pattern directly to buttons and cards when the screen contains evidence, queues, timelines, validation, permissions, diffs, metrics, alerts, empty states, or communication threads. Classify the input/view intent first, because the same object needs different UI when the user is entering it, scanning it, verifying it, comparing it, or recovering from it.
 
 ## Information Shapes
 
