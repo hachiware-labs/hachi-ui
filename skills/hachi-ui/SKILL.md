@@ -12,7 +12,7 @@ metadata:
 
 ## Goal
 
-Create useful UI prototypes before making them beautiful. For application work, translate the brief into a semantic UI element plan before drawing: identify the product thesis, the user's decisions, the information units required for those decisions, the information shape of each unit, the appropriate whole-screen pattern, the appropriate input/display/evidence element for each unit, the area each unit deserves, the gaze route through the screen, and the states or provenance needed for trust.
+Create useful UI prototypes before making them beautiful. For application work, use the UI semantic design primer before drawing: identify the product thesis, the user's decisions, the information units required for those decisions, the information shape of each unit, the appropriate whole-screen pattern, the appropriate input/display/evidence element for each unit, the area each unit deserves, the gaze route through the screen, and the states or provenance needed for trust.
 
 Start from this plan and a monochrome wireframe, then add visual direction only after the navigation, state, and user decision path are clear. The skill should not merely stack plausible components; it should explain why each element exists, why it uses that control or display form, why the screen pattern fits the object model, and why heavy editing or verification work receives enough space.
 
@@ -32,22 +32,23 @@ Ask a short clarification only when missing information would materially change 
 
 Before drawing, define these points in scratch notes or the final summary when useful:
 
-1. Product thesis: what this product does differently and what the screen must make inspectable, writable, comparable, or decidable.
-2. User job: what the user must understand, decide, write, verify, compare, recover from, or complete.
-3. Direction choice: for broad product work, propose or inherit a named direction from `references/direction-varianting.md`.
-4. Screen family: for multi-screen products, preserve shared navigation, object model, density, state language, and visual thesis using `references/screen-family-continuity.md`.
-5. UI element plan: user decisions, information units, input/view information patterns, information shapes, screen pattern, element mapping, area budget, gaze route, and state/evidence needs.
-6. Screen contract: question answered, primary action, secondary actions, state, and next screen.
-7. Layout pattern: choose from `references/app-layout-patterns.md` and `references/screen-pattern-catalog.md`; when quality is uncertain, check `references/screen-pattern-quality-audit.md`.
-8. Information-unit and input/display elements: classify input/view information with `references/information-shape-catalog.md`, decompose the screen with `references/information-unit-patterns.md`, then choose controls from `references/input-element-catalog.md` based on information shape, input burden, validation, density, and evidence needs.
-9. Gaze path: for example F-pattern, Z-pattern, center-out, radial, comparison, or process flow.
-10. SVG role: structure, relationship, flow, emphasis, comparison, state, bottleneck, or audit trail.
-11. UI language: match the user's language; if the user writes Japanese, use Japanese UI labels and screen notes.
-12. Design system thesis: purpose, brand posture, density, trust level, and interaction feel.
+1. Semantic design primer: for app/product work, read `references/ui-semantic-design-primer.md` to identify objects, user decisions, information units, state, evidence, area budget, and gaze route before choosing components.
+2. Product thesis: what this product does differently and what the screen must make inspectable, writable, comparable, or decidable.
+3. User job: what the user must understand, decide, write, verify, compare, recover from, or complete.
+4. Direction choice: for broad product work, propose or inherit a named direction from `references/direction-varianting.md`.
+5. Screen family: for multi-screen products, preserve shared navigation, object model, density, state language, and visual thesis using `references/screen-family-continuity.md`.
+6. UI element plan: user decisions, information units, input/view information patterns, information shapes, screen pattern, element mapping, area budget, gaze route, and state/evidence needs.
+7. Screen contract: question answered, primary action, secondary actions, state, and next screen.
+8. Layout pattern: choose from `references/app-layout-patterns.md` and `references/screen-pattern-catalog.md`; when quality is uncertain, check `references/screen-pattern-quality-audit.md`.
+9. Information-unit and input/display elements: classify input/view information with `references/information-shape-catalog.md`, decompose the screen with `references/information-unit-patterns.md`, then choose controls from `references/input-element-catalog.md` based on information shape, input burden, validation, density, and evidence needs.
+10. Gaze path: for example F-pattern, Z-pattern, center-out, radial, comparison, or process flow.
+11. SVG role: structure, relationship, flow, emphasis, comparison, state, bottleneck, or audit trail.
+12. UI language: match the user's language; if the user writes Japanese, use Japanese UI labels and screen notes.
+13. Design system thesis: purpose, brand posture, density, trust level, and interaction feel.
 
 ## Workflow
 
-1. Identify the product context, audience, primary workflow, product thesis, required screen state, and target viewport.
+1. Identify the product context, audience, primary workflow, product thesis, required screen state, and target viewport. For app/product work, read `references/ui-semantic-design-primer.md` first and use it to extract core objects, user decisions, information units, state, evidence, area budget, and gaze route.
 2. For app/product work, read `references/semantic-ui-planning.md`, `references/screen-pattern-catalog.md`, `references/information-shape-catalog.md`, `references/information-unit-patterns.md`, and `references/input-element-catalog.md` before drawing. Create a UI Element Plan that maps user decisions to information units, input/view information patterns, information shapes, whole-screen patterns, unit patterns, UI elements, area budget, gaze route, states, and evidence/provenance needs. If the selected screen pattern feels generic, check `references/screen-pattern-quality-audit.md` and switch to a sharper replacement.
 3. For broad product briefs or multi-screen products, read `references/direction-varianting.md` and propose 2-3 named directions when useful. If the user selects one, preserve that direction in subsequent screens.
 4. For multi-screen product surfaces, read `references/screen-family-continuity.md` and define a screen family plan: global navigation, core objects, shared density, shared state language, primary evidence model, and relationships between screens.
@@ -96,7 +97,7 @@ After the wireframe proves the flow, define the visual system before styling:
 
 Iterate without asking the user when the critique points to objective defects:
 
-- Weak element planning: redraw from the UI Element Plan when the screen merely lists plausible components instead of mapping user decisions to information units and suitable elements.
+- Weak semantic planning: redraw from `ui-semantic-design-primer.md` and the UI Element Plan when the screen merely lists plausible components instead of mapping objects, user decisions, information units, state, evidence, and suitable elements.
 - Missing direction choice: for broad product briefs, propose named directions instead of committing to one generic clean SaaS layout.
 - Broken screen family continuity: when a follow-up screen ignores a previously selected direction, navigation model, density, or object model, update the screen family plan and redraw.
 - Wrong screen pattern: switch pattern when the current layout fights the user's job, such as using a generic dashboard for audit work, a narrow inspector for heavy editing, raw logs for step verification, or a catalog pattern scored below 80 in `screen-pattern-quality-audit.md`.
@@ -152,10 +153,11 @@ Stop after the first pass that reaches at least `80/100`, unless the user explic
 
 ## Visual Quality
 
-Use `references/semantic-ui-planning.md` for translating requirements into product thesis, user decisions, information units, information shapes, UI element mapping, gaze route, area budget, and evidence/provenance needs; `references/information-shape-catalog.md` for classifying input information and viewing information patterns before choosing controls; `references/screen-pattern-catalog.md` for selecting whole-screen patterns from the user job, object model, information density, and editing burden; `references/screen-pattern-quality-audit.md` for avoiding weak generic patterns and checking replacements; `references/information-unit-patterns.md` for decomposing screens into primary result, evidence, queue, timeline, validation, permission, diff, metric, alert, empty-state, and communication units; `references/input-element-catalog.md` for choosing controls and display elements from information shape; `references/direction-varianting.md` for proposing and preserving named directions; `references/screen-family-continuity.md` for multi-screen product consistency; `references/ui-correction-loop.md` for applying user corrections as planning patches; `references/wireframe-first.md` for app structure; `references/flow-wireframe-template.md` for stable multi-screen SVG flow layout; `references/app-layout-patterns.md` for screen type selection; `references/onboarding-flow-patterns.md` for initial setup; `references/design-system-after-wireframe.md` for `DESIGN.md` system definition and microinteractions; `references/frontend-art-direction.md` for visually led work; `references/svg-ui-quality.md` for final polish; and `references/svg-composition-rubric.md` for scoring and redesign decisions.
+Use `references/ui-semantic-design-primer.md` for the background thinking before UI design: object-first modeling, task/decision framing, information unit extraction, state, evidence, area budget, and gaze route; `references/semantic-ui-planning.md` for translating requirements into product thesis, user decisions, information units, information shapes, UI element mapping, gaze route, area budget, and evidence/provenance needs; `references/information-shape-catalog.md` for classifying input information and viewing information patterns before choosing controls; `references/screen-pattern-catalog.md` for selecting whole-screen patterns from the user job, object model, information density, and editing burden; `references/screen-pattern-quality-audit.md` for avoiding weak generic patterns and checking replacements; `references/information-unit-patterns.md` for decomposing screens into primary result, evidence, queue, timeline, validation, permission, diff, metric, alert, empty-state, and communication units; `references/input-element-catalog.md` for choosing controls and display elements from information shape; `references/direction-varianting.md` for proposing and preserving named directions; `references/screen-family-continuity.md` for multi-screen product consistency; `references/ui-correction-loop.md` for applying user corrections as planning patches; `references/wireframe-first.md` for app structure; `references/flow-wireframe-template.md` for stable multi-screen SVG flow layout; `references/app-layout-patterns.md` for screen type selection; `references/onboarding-flow-patterns.md` for initial setup; `references/design-system-after-wireframe.md` for `DESIGN.md` system definition and microinteractions; `references/frontend-art-direction.md` for visually led work; `references/svg-ui-quality.md` for final polish; and `references/svg-composition-rubric.md` for scoring and redesign decisions.
 
 Core checks:
 
+- The semantic design primer has identified core objects, user decisions, information units, state, evidence, area budget, and gaze route before drawing.
 - The UI Element Plan maps user decisions to information units, input/view information patterns, information shapes, pattern choice, elements, area budget, and evidence needs.
 - The selected layout pattern matches the user job and object model, and weak/generic catalog patterns have been sharpened or replaced.
 - The screen contract is clear: question, state, primary action, secondary action, next screen.
@@ -179,6 +181,8 @@ Core checks:
 ## Delivery
 
 Return the absolute path to each SVG. Include the absolute path to `DESIGN.md` when one was created or updated, the assumed viewport, the main screen state, design-system thesis when a high-fidelity pass was performed, and the final rubric score when a scoring pass was performed.
+
+
 
 
 

@@ -1,18 +1,19 @@
 # Hachi UI Skill
 
-Hachi UI is an agent skill for creating editable UI prototype screens as standalone SVG files. It is optimized for product UI work that needs to move from semantic UI planning, to input/view information classification, to whole-screen pattern selection, to information-unit decomposition, to input/display element selection, to a clear wireframe, to a reusable design system, and then to a higher-fidelity SVG prototype.
+Hachi UI is an agent skill for creating editable UI prototype screens as standalone SVG files. It is optimized for product UI work that needs to move from semantic UI planning, to semantic object/decision modeling, to input/view information classification, to whole-screen pattern selection, to information-unit decomposition, to input/display element selection, to a clear wireframe, to a reusable design system, and then to a higher-fidelity SVG prototype.
 
 ## Workflow
 
 Hachi UI uses a staged workflow:
 
-1. **Semantic UI planning**: convert the product brief into product thesis, user decisions, information units, input/view information patterns, information shapes, screen pattern choices, information-unit patterns, UI element choices, gaze route, area budget, and state/evidence requirements.
-2. **Direction and screen family planning**: for multi-screen products, propose named directions when useful, preserve the selected direction, and define the shared object model, navigation, density, and state language across screens.
-3. **Wireframe first**: define the user question, primary action, retreat path, failure state, and transition trigger.
-4. **Flow layout**: for 3-5 screen app flows, use a wide left-to-right SVG canvas instead of wrapping screens into rows.
-5. **Design system pass**: after the wireframe is clear, create or update `DESIGN.md` with design tokens and rationale.
-6. **High-fidelity SVG**: apply the design system to an editable SVG screen or screen sequence.
-7. **Verification**: render the SVG, run the smoke check, and lint `DESIGN.md` when available.
+1. **UI semantic design primer**: identify core objects, user decisions, information units, state, evidence, area budget, and gaze route before drawing.
+2. **Semantic UI planning**: convert the product brief into product thesis, user decisions, information units, input/view information patterns, information shapes, screen pattern choices, information-unit patterns, UI element choices, gaze route, area budget, and state/evidence requirements.
+3. **Direction and screen family planning**: for multi-screen products, propose named directions when useful, preserve the selected direction, and define the shared object model, navigation, density, and state language across screens.
+4. **Wireframe first**: define the user question, primary action, retreat path, failure state, and transition trigger.
+5. **Flow layout**: for 3-5 screen app flows, use a wide left-to-right SVG canvas instead of wrapping screens into rows.
+6. **Design system pass**: after the wireframe is clear, create or update `DESIGN.md` with design tokens and rationale.
+7. **High-fidelity SVG**: apply the design system to an editable SVG screen or screen sequence.
+8. **Verification**: render the SVG, run the smoke check, and lint `DESIGN.md` when available.
 
 ## DESIGN.md
 
@@ -106,7 +107,9 @@ Generated screenshots, exploratory variants, per-project `DESIGN.md` files, npm 
 
 ## Pattern Quality
 
-The screen catalog is evaluated in `skills/hachi-ui/references/screen-pattern-quality-audit.md`. Patterns below 80 should be replaced or repaired rather than used as primary guidance. The catalog is layered: input/view information patterns live in `information-shape-catalog.md`, whole-screen patterns live in `screen-pattern-catalog.md`, middle-layer information units live in `information-unit-patterns.md`, and atomic controls/displays live in `input-element-catalog.md`.
+The semantic design entry point is `skills/hachi-ui/references/ui-semantic-design-primer.md`. The screen catalog is evaluated in `skills/hachi-ui/references/screen-pattern-quality-audit.md`. Patterns below 80 should be replaced or repaired rather than used as primary guidance. The catalog is layered: input/view information patterns live in `information-shape-catalog.md`, whole-screen patterns live in `screen-pattern-catalog.md`, middle-layer information units live in `information-unit-patterns.md`, and atomic controls/displays live in `input-element-catalog.md`.
+
+
 
 
 
