@@ -1,12 +1,12 @@
 # Hachi UI Skill
 
-Hachi UI is an agent skill for creating editable UI prototype screens as standalone SVG files. It is optimized for product UI work that needs to move from semantic UI planning, to screen pattern and element pattern selection, to a clear wireframe, to a reusable design system, and then to a higher-fidelity SVG prototype.
+Hachi UI is an agent skill for creating editable UI prototype screens as standalone SVG files. It is optimized for product UI work that needs to move from semantic UI planning, to whole-screen pattern selection, to information-unit decomposition, to input/display element selection, to a clear wireframe, to a reusable design system, and then to a higher-fidelity SVG prototype.
 
 ## Workflow
 
 Hachi UI uses a staged workflow:
 
-1. **Semantic UI planning**: convert the product brief into product thesis, user decisions, information units, information shapes, screen pattern choices, UI element choices, gaze route, area budget, and state/evidence requirements.
+1. **Semantic UI planning**: convert the product brief into product thesis, user decisions, information units, information shapes, screen pattern choices, information-unit patterns, UI element choices, gaze route, area budget, and state/evidence requirements.
 2. **Direction and screen family planning**: for multi-screen products, propose named directions when useful, preserve the selected direction, and define the shared object model, navigation, density, and state language across screens.
 3. **Wireframe first**: define the user question, primary action, retreat path, failure state, and transition trigger.
 4. **Flow layout**: for 3-5 screen app flows, use a wide left-to-right SVG canvas instead of wrapping screens into rows.
@@ -103,3 +103,9 @@ This repository keeps only a small number of lightweight examples:
 - `examples/nagare-conversation-replay-test.md`: planning regression example for direction, correction, auditability, and wide editing behavior.
 
 Generated screenshots, exploratory variants, per-project `DESIGN.md` files, npm caches, and Python caches should stay untracked. Keep local validation output under `examples/` or `test/`.
+
+## Pattern Quality
+
+The screen catalog is evaluated in `skills/hachi-ui/references/screen-pattern-quality-audit.md`. Patterns below 80 should be replaced or repaired rather than used as primary guidance. The catalog is layered: whole-screen patterns live in `screen-pattern-catalog.md`, middle-layer information units live in `information-unit-patterns.md`, and atomic controls/displays live in `input-element-catalog.md`.
+
+

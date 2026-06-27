@@ -49,17 +49,17 @@ Use when the job is triage and throughput.
 - Good for: support, review queues, approvals, incident response, moderation.
 - Required states: unread/new, assigned, blocked, bulk selected, done, next item.
 
-### 5. Wizard / Stepper
+### 5. Guided Setup / Migration Flow
 
-Use for setup, import, migration, checkout, publishing, or irreversible changes.
+Use when setup, import, migration, checkout, publishing, or irreversible changes need staged validation and consequence preview.
 
 - Structure: progress, current step, requirement checklist, validation, next/back.
 - Good for: initial setup, OAuth connection, workspace creation, billing, deployment.
 - Required states: incomplete, validating, failed validation, skipped optional, done.
 
-### 6. Split Preview
+### 6. Edit Preview Workbench
 
-Use when editing one side changes a preview, diff, or result.
+Use when a wide editor/config surface and a preview, diff, or result must stay linked.
 
 - Structure: editor/config on one side, live preview/result on the other.
 - Good for: email builders, automations, workflows, reporting, design tools.
@@ -75,25 +75,25 @@ Use when spatial relationships matter.
 - Required states: selected object, pan/zoom, invalid edge, empty canvas, layout conflict.
 - Keep the canvas dominant; the inspector should not make the screen feel like two equal halves.
 
-### 8. Command Center
+### 8. Exception Command Center
 
-Use when the user must understand status and make one or more decisions.
+Use when the user must understand exceptions and make one or more operational decisions.
 
 - Structure: summary strip, anomaly/flow visualization, decision queue, evidence table.
 - Good for: operations, revenue, security, logistics, executive review.
 - Required states: normal, warning, critical, acknowledged, recommended action.
 
-### 9. Settings Matrix
+### 9. Settings Dependency Map
 
-Use when users configure multiple categories with dependencies.
+Use when users configure settings with dependencies, inheritance, risk, or downstream effects.
 
 - Structure: settings navigation, focused panel, dependency warnings, save/revert bar.
 - Good for: permissions, integrations, feature flags, workspace preferences.
 - Required states: dirty, saved, invalid, inherited, locked by role.
 
-### 10. Mobile Task Stack
+### 10. Mobile Field Task Flow
 
-Use when the user performs one focused task on a small screen.
+Use when the user performs one focused mobile or field task with state and recovery.
 
 - Structure: header, current object/state, primary action near bottom, secondary overflow.
 - Good for: field apps, approvals, capture, messaging, checklists.
@@ -112,12 +112,12 @@ Use when the user performs one focused task on a small screen.
 - Many modules: left pane workspace.
 - One object at a time: list detail.
 - Many items to process: inbox/queue.
-- Linear setup: wizard/stepper.
-- Config affects output: split preview.
+- Linear setup: guided setup / migration flow.
+- Config affects output: edit preview workbench.
 - Relationships matter: canvas + inspector.
-- Decision under uncertainty: command center.
-- Permissions or integrations: settings matrix.
-- Small-screen task: mobile task stack.
+- Decision under uncertainty: exception command center.
+- Permissions or integrations: settings dependency map.
+- Small-screen task: mobile field task flow.
 
 ## Anti-Patterns
 
@@ -127,4 +127,5 @@ Use when the user performs one focused task on a small screen.
 - List-detail when the real task is bulk review or queue processing.
 - Dashboard split where the left half is summary cards and the right half is unrelated detail.
 - Landing page split hero with text on one side and a generic product card on the other.
+
 

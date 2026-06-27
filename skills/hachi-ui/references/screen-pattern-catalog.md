@@ -1,6 +1,6 @@
 # Screen Pattern Catalog
 
-Use this catalog with `app-layout-patterns.md` when a product screen needs a more specific whole-screen pattern than a generic sidebar, dashboard, or split view.
+Use this catalog with `app-layout-patterns.md` when a product screen needs a more specific whole-screen pattern than a generic sidebar, dashboard, or split view. After choosing the whole-screen pattern, decompose it with `information-unit-patterns.md`, then choose atomic controls from `input-element-catalog.md`.
 
 ## Selection Inputs
 
@@ -29,8 +29,8 @@ Choose from:
 ### Knowledge, Settings, And Configuration
 
 9. Domain Knowledge Workspace
-10. Knowledge Library
-11. Settings Matrix
+10. Source Governance Library
+11. Settings Dependency Map
 12. Permission / Role Matrix
 13. Feature Flag Console
 14. Integration Health Console
@@ -45,20 +45,20 @@ Choose from:
 20. Document Draft + Review
 21. Annotation / Labeling Review
 22. Version History / Rollback
-23. Search Results + Preview
-24. Template / Gallery Picker
+23. Search Investigation Surface
+24. Template Decision Gallery
 
 ### Operations And Business SaaS
 
-25. Command Center
+25. Exception Command Center
 26. Object Profile / 360 Detail
 27. List + Bulk Action Review
 28. Pipeline / Kanban Board
 29. SLA Triage Queue
 30. Incident War Room
 31. Schedule / Resource Planner
-32. Calendar Operations Board
-33. Billing / Usage Console
+32. Appointment Readiness Board
+33. Plan Usage Entitlement Console
 
 ### Analytics And Decision Support
 
@@ -70,9 +70,9 @@ Choose from:
 ### Spatial, Preview, And Mobile
 
 38. Canvas + Inspector
-39. Split Preview
-40. Wizard / Stepper
-41. Mobile Task Stack
+39. Edit Preview Workbench
+40. Guided Setup / Migration Flow
+41. Mobile Field Task Flow
 
 > Use the index as vocabulary. Use the detailed pattern sections below to decide whether the screen deserves that pattern.
 
@@ -154,7 +154,7 @@ Use when users manage domains, knowledge files, artifact specs, rubrics, and pro
 - Required: selected domain, file state, artifact state, validation.
 - Avoid: four equal panes that starve prompt/rubric editing.
 
-### Knowledge Library
+### Source Governance Library
 
 Use when browsing, uploading, tagging, and validating knowledge assets.
 
@@ -162,7 +162,7 @@ Use when browsing, uploading, tagging, and validating knowledge assets.
 - Good for: source libraries, policy repositories, document knowledge bases.
 - Required: processing, indexed, stale, invalid, duplicate.
 
-### Settings Matrix
+### Settings Dependency Map
 
 Use for permissions, integrations, feature flags, or dependency-heavy settings.
 
@@ -259,7 +259,7 @@ Use when history, compare, restore, and audit are key.
 - Good for: configs, prompts, documents, policies.
 - Required: current, selected past, restore confirmation, conflict.
 
-### Search Results + Preview
+### Search Investigation Surface
 
 Use when the main task is finding and inspecting objects quickly.
 
@@ -267,7 +267,7 @@ Use when the main task is finding and inspecting objects quickly.
 - Good for: knowledge search, admin records, logs, people, documents.
 - Required: loading, no results, selected result, filter chips.
 
-### Template / Gallery Picker
+### Template Decision Gallery
 
 Use when the user starts from reusable templates, examples, or presets.
 
@@ -275,7 +275,7 @@ Use when the user starts from reusable templates, examples, or presets.
 - Good for: workflow templates, report templates, prompt presets.
 - Required: selected template, preview, empty category, custom template.
 
-### Command Center
+### Exception Command Center
 
 Use when status, anomalies, and decisions must be visible at once.
 
@@ -331,7 +331,7 @@ Use when assigning people/assets over time.
 - Good for: staffing, capacity, field ops, rooms/equipment.
 - Required: conflict, overbooked, unassigned, tentative, confirmed.
 
-### Calendar Operations Board
+### Appointment Readiness Board
 
 Use when calendar events are operational objects with preparation and follow-up.
 
@@ -339,7 +339,7 @@ Use when calendar events are operational objects with preparation and follow-up.
 - Good for: executive meetings, healthcare, sales calls, service visits.
 - Required: upcoming, ready, missing prep, completed, follow-up.
 
-### Billing / Usage Console
+### Plan Usage Entitlement Console
 
 Use when plan, usage, invoices, limits, and payment state must be inspectable.
 
@@ -387,7 +387,7 @@ Use when spatial relationships matter.
 - Good for: diagrams, agents, workflows, maps, org charts, data lineage.
 - Required: selected object, pan/zoom, invalid edge, empty canvas, layout conflict.
 
-### Split Preview
+### Edit Preview Workbench
 
 Use when editing directly affects preview, diff, or result.
 
@@ -395,7 +395,7 @@ Use when editing directly affects preview, diff, or result.
 - Good for: email builders, automations, workflows, reporting, design tools.
 - Required: draft, preview, validation errors, unsaved changes.
 
-### Wizard / Stepper
+### Guided Setup / Migration Flow
 
 Use for setup, import, migration, publishing, or irreversible changes.
 
@@ -403,7 +403,7 @@ Use for setup, import, migration, publishing, or irreversible changes.
 - Good for: OAuth connection, workspace setup, billing, deployment.
 - Required: incomplete, validating, failed validation, skipped optional, done.
 
-### Mobile Task Stack
+### Mobile Field Task Flow
 
 Use for one focused mobile task.
 
@@ -411,14 +411,92 @@ Use for one focused mobile task.
 - Good for: capture, approval, field work, messaging, checklists.
 - Required: offline, draft, sync pending, destructive confirmation.
 
+### Access Gate / Recovery
+
+Use when entry, authentication, authorization, or recovery is the main work.
+
+- Structure: identity context, access state, required action, recovery options, security note, next destination.
+- Good for: sign-in, SSO, invite acceptance, locked workspace, expired session, account recovery.
+- Required: invalid credentials, expired link, locked role, recovery sent, SSO unavailable.
+- Avoid: marketing-style login pages when the issue is operational recovery.
+
+### First-Run Activation Checklist
+
+Use when a new user or workspace must complete a few meaningful setup tasks before value appears.
+
+- Structure: product promise, activation tasks, current blocker, sample/preview, skip/import path, progress state.
+- Good for: onboarding, workspace setup, integration setup, empty-state activation.
+- Required: not started, blocked, optional skipped, completed, sample data.
+- Avoid: generic tours that do not create a usable product state.
+
+### Object Creation Studio
+
+Use when creating the primary object requires naming, configuring, validating, and previewing consequences.
+
+- Structure: object intent, required fields, configuration groups, validation, preview/summary, create action.
+- Good for: project creation, campaign setup, workflow creation, policy creation, dataset creation.
+- Required: draft, invalid, duplicate name, preview, created.
+- Avoid: tiny modals when creation includes meaningful configuration or risk.
+
+### Notification / Activity Inbox
+
+Use when the user must review events, mentions, tasks, and system updates without losing priority.
+
+- Structure: grouped feed, priority/owner filters, event summary, linked object preview, mark/read/action controls.
+- Good for: collaboration tools, admin systems, workflow products, incident or approval notifications.
+- Required: unread, assigned, muted, action required, archived.
+- Avoid: chronological feeds with no grouping or next action.
+
+### Help / Support Resolution Center
+
+Use when the user needs diagnosis, self-service, escalation, or support follow-through.
+
+- Structure: issue description, suggested fixes, product state/evidence, contact/escalate path, ticket status.
+- Good for: support centers, troubleshooting, AI help assistants, enterprise admin support.
+- Required: unresolved, suggestion tried, escalated, waiting, resolved.
+- Avoid: static FAQ pages when the user needs recovery and state.
+
+### Data Quality Resolution Queue
+
+Use when records must be cleaned, merged, mapped, or repaired before downstream work is trustworthy.
+
+- Structure: issue groups, affected records, suggested fix, confidence, bulk repair, audit/revert.
+- Good for: CRM cleanup, import validation, deduplication, taxonomy cleanup, data governance.
+- Required: duplicate, missing field, invalid format, suggested repair, applied, reverted.
+- Avoid: generic data tables that hide why a row is unhealthy.
+
+### Communication Thread Console
+
+Use when conversation is tied to work objects, decisions, and evidence.
+
+- Structure: thread list, selected conversation, linked object/evidence, requested action, resolution state.
+- Good for: support cases, handoffs, internal approvals, customer success, review comments.
+- Required: unread, assigned, waiting reply, action requested, resolved.
+- Avoid: chat-first UI when the conversation is only secondary to a workflow decision.
+
+### Relationship / Dependency Map
+
+Use when understanding connections, impact, or lineage is the user's main decision.
+
+- Structure: graph or dependency lanes, selected node, relationship types, impact summary, filter/legend, affected actions.
+- Good for: data lineage, integration dependencies, org relationships, workflow dependencies, permission inheritance.
+- Required: selected node, upstream/downstream, missing link, cycle/conflict, impact preview.
+- Avoid: decorative node diagrams without selectable relationships or consequences.
 ## Pattern Switch Rules
 
 - Hidden answer: switch to Work Intake + History Stack or Evidence Drilldown.
 - Audit work: switch to Agent Execution Trace.
 - Prompt/rubric editing: switch to Wide Artifact Editor or Prompt And Rubric Studio.
-- Many settings with dependencies: switch to Settings Matrix, Permission / Role Matrix, Feature Flag Console, or Integration Health Console.
+- Many settings with dependencies: switch to Settings Dependency Map, Permission / Role Matrix, Feature Flag Console, or Integration Health Console.
 - Import/migration: switch to Data Import + Field Mapping.
 - Batch changes: switch to List + Bulk Action Review.
 - Live incident or SLA pressure: switch to Incident War Room, SLA Triage Queue, or Alert Triage Center.
 - Too many equal panes: choose one dominant working surface and progressive disclosure.
 - User asks for two columns: treat it as area-budget correction, not pure visual preference.
+- Empty product state: switch to First-Run Activation Checklist or Object Creation Studio.
+- Access failure: switch to Access Gate / Recovery.
+- Search task becomes diagnosis: switch from Search Investigation Surface to Evidence Drilldown or Data Quality Resolution Queue.
+- Relationship understanding dominates: switch to Relationship / Dependency Map.
+
+
+

@@ -17,12 +17,13 @@ A screen should not be a list of plausible components. It should be a semantic a
 5. Information units
 6. Information shapes
 7. Screen pattern
-8. Element mapping
-9. Area budget
-10. Gaze route
-11. State coverage
-12. Evidence/provenance needs
-13. Rejected patterns and why
+8. Information-unit patterns
+9. Element mapping
+10. Area budget
+11. Gaze route
+12. State coverage
+13. Evidence/provenance needs
+14. Rejected patterns and why
 
 ## UI Element Plan Schema
 
@@ -51,6 +52,10 @@ information_units:
 screen_pattern:
   name: Agent Execution Trace
   reason: "The main job is step-by-step verification, not dashboard overview."
+unit_patterns:
+  final_answer: primary_answer_result_block
+  trace_step: activity_timeline_step
+  evidence: evidence_detail_panel
 element_map:
   final_answer: summary_card
 area_budget:
@@ -69,6 +74,16 @@ rejected_patterns:
   - name: generic_dashboard
     reason: "It hides the answer and evidence behind metrics."
 ```
+
+## Pattern Layers
+
+Use three layers before drawing:
+
+- Whole-screen pattern: the complete working surface, chosen from `screen-pattern-catalog.md`.
+- Information-unit pattern: repeated or dominant blocks inside the screen, chosen from `information-unit-patterns.md`.
+- Input/display element: atomic controls and visual elements, chosen from `input-element-catalog.md`.
+
+Do not jump from a whole-screen pattern directly to buttons and cards when the screen contains evidence, queues, timelines, validation, permissions, diffs, metrics, alerts, empty states, or communication threads.
 
 ## Information Shapes
 
@@ -116,6 +131,10 @@ Redraw from the plan when:
 - the screen is a plausible component stack but not a decision aid;
 - the primary answer is hidden behind logs or metrics;
 - long prompts or rubrics are squeezed into a narrow pane;
-- the chosen screen pattern fights the object model;
+- the chosen screen pattern fights the object model or is scored below 80 in `screen-pattern-quality-audit.md`;
 - state and evidence are represented only as generic badges;
+- information units are not decomposed before choosing controls;
 - rejected patterns are not named, so the same mistake can return.
+
+
+
