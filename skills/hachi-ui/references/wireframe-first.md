@@ -4,19 +4,23 @@ Use this reference before visual design for SaaS, tools, dashboards, mobile apps
 
 ## Purpose
 
-Use monochrome wireframes to prove navigation, information hierarchy, state, and user decisions before adding beauty. A beautiful screen with a broken workflow is a failed prototype.
+Use monochrome wireframes to prove navigation, information hierarchy, state, and user decisions before adding beauty. Before wireframing product UI, complete semantic UI planning: product thesis, user decisions, information units, information shapes, screen pattern, element mapping, area budget, gaze route, and evidence/provenance needs. A beautiful screen with a broken workflow is a failed prototype.
 
 ## Constraints
 
 - Use only white, black, and grays.
 - Do not use brand colors, gradients, shadows, textures, photos, decorative icons, or visual effects.
-- Use simple boxes, lines, labels, arrows, tabs, tables, forms, and status chips.
+- Use simple boxes, lines, labels, arrows, tabs, tables, forms, timelines, input/output pairs, evidence blocks, and status chips.
 - Use real labels, not lorem ipsum.
 - Prefer 3-5 linked screens for workflows.
 - Prefer left-to-right flow for sequential app journeys. Use `flow-wireframe-template.md` and a wider SVG canvas instead of wrapping screens into multiple rows when that improves readability.
 - Avoid left/right split layouts in the first pass unless the task explicitly requires simultaneous comparison, selection/detail, edit/preview, or canvas/inspector.
 - Match the user's language for UI labels, notes, and screen contracts. If the user writes Japanese, produce Japanese wireframes.
 - Place screen contracts outside each screen frame, near the screen they describe. Do not put review annotations inside the product UI.
+
+## Before The Screen Contract
+
+For product UI, write or infer the UI Element Plan from `semantic-ui-planning.md` first. The screen contract should be a result of that plan, not a substitute for it. If long prompts, rubrics, logs, or evidence review appear in the plan, allocate enough space before drawing.
 
 ## Screen Contract
 
@@ -96,3 +100,4 @@ Only move to visual design when:
 - The next action and recovery path are visible.
 - The object model is stable.
 - The wireframe would still work if visual polish were removed.
+

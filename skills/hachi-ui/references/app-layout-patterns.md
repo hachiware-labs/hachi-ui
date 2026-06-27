@@ -1,6 +1,6 @@
 # App Layout Patterns
 
-Choose the layout pattern before drawing. Do not default to a left sidebar or left/right split unless the user job requires it.
+Choose the layout pattern before drawing. Use this with `screen-pattern-catalog.md`: first map the brief to product thesis, user decisions, information units, information shapes, editing burden, and verification burden; then choose the whole-screen pattern. Do not default to a left sidebar or left/right split unless the user job requires it.
 
 ## Split Layout Guardrail
 
@@ -99,6 +99,14 @@ Use when the user performs one focused task on a small screen.
 - Good for: field apps, approvals, capture, messaging, checklists.
 - Required states: offline, draft, sync pending, destructive confirmation.
 
+## Semantic Selection Heuristic
+
+- Heavy verification or audit: Agent Execution Trace or Evidence Drilldown from `screen-pattern-catalog.md`.
+- New AI work plus history: Work Intake + History Stack.
+- Domain files, artifacts, rubrics, and prompts: Domain Knowledge Workspace plus Wide Artifact Editor.
+- Long prompt/rubric editing: never use a narrow inspector; use a wide editor, modal, full page, or dedicated detail surface.
+- User correction about columns or cramped editing: treat it as area budget and screen pattern correction, not cosmetic layout tuning.
+
 ## Selection Heuristic
 
 - Many modules: left pane workspace.
@@ -119,3 +127,4 @@ Use when the user performs one focused task on a small screen.
 - List-detail when the real task is bulk review or queue processing.
 - Dashboard split where the left half is summary cards and the right half is unrelated detail.
 - Landing page split hero with text on one side and a generic product card on the other.
+

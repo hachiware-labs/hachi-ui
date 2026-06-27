@@ -1,7 +1,7 @@
 interface:
   display_name: "Hachi UI"
-  short_description: "Wireframe-first SVG UI and design systems"
-  default_prompt: "Use $hachi-ui to design a wireframe-first app flow, then define its design system and refine it into an editable SVG UI prototype."
+  short_description: "Semantic planning to SVG UI prototypes"
+  default_prompt: "Use $hachi-ui to translate this product brief into a semantic UI element plan, wireframe the flow, define the design system, and refine it into an editable SVG prototype."
 
 policy:
   allow_implicit_invocation: true

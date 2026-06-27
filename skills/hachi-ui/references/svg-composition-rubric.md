@@ -6,8 +6,8 @@ Use this rubric after generating a screen. Score strictly out of 100. If the sco
 
 | Item | Points | Strong Result |
 |---|---:|---|
-| User purpose and context | 15 | The user can tell what to inspect, decide, and do next. |
-| Information structure and priority | 15 | Claim, support, detail, and action are clearly layered. |
+| User purpose and context | 15 | The user can tell what to inspect, decide, write, verify, or do next. |
+| Semantic planning and information structure | 15 | User decisions map to information units, information shapes, suitable elements, evidence, and priority. |
 | Gaze guidance and composition | 15 | The eye moves naturally through the intended sequence. |
 | SVG and diagram expression | 15 | SVG expresses structure, relationship, flow, comparison, emphasis, or state. |
 | Aesthetic direction and brand character | 10 | The screen has a specific visual thesis and one memorable anchor. |
@@ -28,8 +28,10 @@ Use this rubric after generating a screen. Score strictly out of 100. If the sco
 
 Ask these before accepting the screen:
 
-- What is the user's goal on this screen?
+- What is the product thesis and user job on this screen?
 - What is the visual thesis?
+- What are the user decision points and information units?
+- Do the chosen screen pattern and UI elements match the information shapes?
 - What is the first claim the screen makes?
 - What should the user look at second and third?
 - Is the screen a composition, or only stacked components?
@@ -41,7 +43,10 @@ Ask these before accepting the screen:
 
 ## Repair Playbook
 
-- Purpose is unclear: rewrite the primary claim and move the main action near the decision point.
+- Purpose is unclear: rewrite the product thesis, user decision points, primary claim, and main action.
+- Element planning is weak: create or repair the UI Element Plan before changing visual styling.
+- Pattern is wrong: switch to the right screen pattern before moving boxes.
+- Area budget is wrong: move heavy editors, rubrics, prompts, logs, or evidence review to a wider surface.
 - Priority is flat: reduce equal-card layouts and create a dominant anchor with quieter supporting regions.
 - Gaze path is weak: add meaningful alignment, flow lines, spatial grouping, or a Z/F/center-out structure.
 - SVG is decorative: replace ornamental shapes with process lanes, relation lines, status fields, before/after geometry, or bottleneck emphasis.
@@ -49,3 +54,4 @@ Ask these before accepting the screen:
 - Operability is weak: add selected, active, disabled, loading, empty, error, confirmation, or undo state where it affects the user's next step.
 - Cognitive load is high: remove duplicate labels, shorten copy, group related facts, and let the diagram explain relationships.
 - Responsiveness is brittle: reduce text dependence inside narrow shapes, keep stable dimensions, and provide mobile-specific composition when needed.
+

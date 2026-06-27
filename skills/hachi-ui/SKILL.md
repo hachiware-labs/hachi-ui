@@ -1,6 +1,6 @@
 ---
 name: hachi-ui
-description: Create and autonomously refine wireframe-first, beautiful, editable SVG UI prototype screens for web, mobile, dashboard, SaaS, tool, product, onboarding, and landing-page concepts. Use when the user asks for UI mockups, monochrome wireframes, app flows, initial setup flows, design systems, microinteraction states, high-fidelity screen comps, design variants, SVG screen compositions, or visual product prototypes where navigation, information hierarchy, gaze guidance, brand character, and rubric-based self-review matter.
+description: Create and autonomously refine wireframe-first, beautiful, editable SVG UI prototype screens for web, mobile, dashboard, SaaS, tool, product, onboarding, AI workflow, admin, settings, and landing-page concepts. Use when the user asks for UI mockups, monochrome wireframes, app flows, initial setup flows, design systems, microinteraction states, high-fidelity screen comps, design variants, SVG screen compositions, or visual product prototypes where semantic UI element planning, screen pattern selection, input/display element selection, direction varianting, screen family continuity, navigation, information hierarchy, gaze guidance, area budgeting, brand character, evidence/provenance modeling, and rubric-based self-review matter.
 license: MIT-0
 metadata:
   version: "0.1.0"
@@ -12,7 +12,9 @@ metadata:
 
 ## Goal
 
-Create useful UI prototypes before making them beautiful. For application work, start from a monochrome wireframe and a screen contract, then add visual direction only after the navigation, state, and user decision path are clear. Treat the SVG as a designed screen composition, not a pile of components: it must guide understanding, express structure, and survive self-review before delivery.
+Create useful UI prototypes before making them beautiful. For application work, translate the brief into a semantic UI element plan before drawing: identify the product thesis, the user's decisions, the information units required for those decisions, the information shape of each unit, the appropriate whole-screen pattern, the appropriate input/display/evidence element for each unit, the area each unit deserves, the gaze route through the screen, and the states or provenance needed for trust.
+
+Start from this plan and a monochrome wireframe, then add visual direction only after the navigation, state, and user decision path are clear. The skill should not merely stack plausible components; it should explain why each element exists, why it uses that control or display form, why the screen pattern fits the object model, and why heavy editing or verification work receives enough space.
 
 ## Default Output
 
@@ -30,31 +32,40 @@ Ask a short clarification only when missing information would materially change 
 
 Before drawing, define these points in scratch notes or the final summary when useful:
 
-1. User job: what the user must understand, decide, or complete.
-2. Screen contract: question answered, primary action, secondary actions, state, and next screen.
-3. Layout pattern: choose from `references/app-layout-patterns.md`.
-4. Gaze path: for example F-pattern, Z-pattern, center-out, radial, comparison, or process flow.
-5. SVG role: structure, relationship, flow, emphasis, comparison, state, or bottleneck.
-6. UI language: match the user's language; if the user writes Japanese, use Japanese UI labels and screen notes.
-7. Design system thesis: purpose, brand posture, density, trust level, and interaction feel.
+1. Product thesis: what this product does differently and what the screen must make inspectable, writable, comparable, or decidable.
+2. User job: what the user must understand, decide, write, verify, compare, recover from, or complete.
+3. Direction choice: for broad product work, propose or inherit a named direction from `references/direction-varianting.md`.
+4. Screen family: for multi-screen products, preserve shared navigation, object model, density, state language, and visual thesis using `references/screen-family-continuity.md`.
+5. UI element plan: user decisions, information units, information shapes, screen pattern, element mapping, area budget, gaze route, and state/evidence needs.
+6. Screen contract: question answered, primary action, secondary actions, state, and next screen.
+7. Layout pattern: choose from `references/app-layout-patterns.md` and `references/screen-pattern-catalog.md`.
+8. Input/display elements: choose from `references/input-element-catalog.md` based on information shape, input burden, validation, density, and evidence needs.
+9. Gaze path: for example F-pattern, Z-pattern, center-out, radial, comparison, or process flow.
+10. SVG role: structure, relationship, flow, emphasis, comparison, state, bottleneck, or audit trail.
+11. UI language: match the user's language; if the user writes Japanese, use Japanese UI labels and screen notes.
+12. Design system thesis: purpose, brand posture, density, trust level, and interaction feel.
 
 ## Workflow
 
-1. Identify the product context, audience, primary workflow, required screen state, and target viewport.
-2. For app/product work, read `references/wireframe-first.md` and create a monochrome flow or screen before adding visual styling.
-3. For 3-5 screen app flows, onboarding flows, setup flows, and screen sequences, read `references/flow-wireframe-template.md` and use its left-to-right SVG grid unless the user explicitly asks otherwise.
-4. Pick the layout pattern from `references/app-layout-patterns.md`; do not default to a left sidebar or split-screen layout unless it fits the user's job.
-5. If the request involves signup, import, workspace creation, permissions, first run, or empty product state, read `references/onboarding-flow-patterns.md`.
-6. Decide the information hierarchy before drawing: claim, evidence, details, action, and recovery paths.
-7. After the wireframe is clear and before high-fidelity styling, read `references/design-system-after-wireframe.md` and define or update a `DESIGN.md` system file using a Claude Design-style source-driven workflow and Google `design.md`-style tokens plus rationale.
-8. For landing pages, brand pages, or visually led prototypes, read `references/frontend-art-direction.md` before the high-fidelity pass.
-9. Choose a screen composition, then sketch with SVG layers that guide the eye through that hierarchy.
-10. Create an SVG file in the workspace. Use `viewBox`, explicit `width` and `height`, `<title>`, and `<desc>`.
-11. Build with editable SVG primitives: `rect`, `path`, `circle`, `line`, `text`, `g`, `defs`, and reusable symbols when helpful.
-12. Use real UI density and controls: icon buttons, segmented controls, tabs, toggles, sliders, inputs, menus, tables, and status indicators when the screen calls for them.
-13. Render or inspect the SVG before delivery. Fix text overflow, overlaps, off-canvas content, illegible contrast, and accidental blank output.
-14. Score the result with `references/svg-composition-rubric.md`. If the score is below `80`, redesign from composition and hierarchy first, not by adding polish.
-15. Run `python scripts/svg_smoke_check.py path/to/file.svg` when Python is available.
+1. Identify the product context, audience, primary workflow, product thesis, required screen state, and target viewport.
+2. For app/product work, read `references/semantic-ui-planning.md`, `references/screen-pattern-catalog.md`, and `references/input-element-catalog.md` before drawing. Create a UI Element Plan that maps user decisions to information units, information shapes, whole-screen patterns, UI elements, area budget, gaze route, states, and evidence/provenance needs.
+3. For broad product briefs or multi-screen products, read `references/direction-varianting.md` and propose 2-3 named directions when useful. If the user selects one, preserve that direction in subsequent screens.
+4. For multi-screen product surfaces, read `references/screen-family-continuity.md` and define a screen family plan: global navigation, core objects, shared density, shared state language, primary evidence model, and relationships between screens.
+5. For user-requested revisions, read `references/ui-correction-loop.md` and treat corrections as UI Element Plan patches before redrawing the SVG.
+6. For app/product work, read `references/wireframe-first.md` and create a monochrome flow or screen before adding visual styling.
+7. For 3-5 screen app flows, onboarding flows, setup flows, and screen sequences, read `references/flow-wireframe-template.md` and use its left-to-right SVG grid unless the user explicitly asks otherwise.
+8. Pick the layout pattern from `references/app-layout-patterns.md` and `references/screen-pattern-catalog.md`; do not default to a left sidebar or split-screen layout unless it fits the user's job.
+9. If the request involves signup, import, workspace creation, permissions, first run, or empty product state, read `references/onboarding-flow-patterns.md`.
+10. Decide the semantic structure before drawing: product thesis, user decisions, information units, information shapes, screen pattern, input/display/evidence elements, claim, evidence, details, actions, recovery paths, and which elements need expanded editing or inspection space.
+11. After the wireframe is clear and before high-fidelity styling, read `references/design-system-after-wireframe.md` and define or update a `DESIGN.md` system file using a Claude Design-style source-driven workflow and Google `design.md`-style tokens plus rationale.
+12. For landing pages, brand pages, or visually led prototypes, read `references/frontend-art-direction.md` before the high-fidelity pass.
+13. Choose a screen composition, then sketch with SVG layers that guide the eye through that hierarchy.
+14. Create an SVG file in the workspace. Use `viewBox`, explicit `width` and `height`, `<title>`, and `<desc>`.
+15. Build with editable SVG primitives: `rect`, `path`, `circle`, `line`, `text`, `g`, `defs`, and reusable symbols when helpful.
+16. Use real UI density and controls: icon buttons, segmented controls, tabs, toggles, sliders, inputs, menus, tables, and status indicators when the screen calls for them.
+17. Render or inspect the SVG before delivery. Fix text overflow, overlaps, off-canvas content, illegible contrast, and accidental blank output.
+18. Score the result with `references/svg-composition-rubric.md`. If the score is below `80`, redesign from composition and hierarchy first, not by adding polish.
+19. Run `python scripts/svg_smoke_check.py path/to/file.svg` when Python is available.
 
 ## Wireframe First
 
@@ -85,11 +96,21 @@ After the wireframe proves the flow, define the visual system before styling:
 
 Iterate without asking the user when the critique points to objective defects:
 
+- Weak element planning: redraw from the UI Element Plan when the screen merely lists plausible components instead of mapping user decisions to information units and suitable elements.
+- Missing direction choice: for broad product briefs, propose named directions instead of committing to one generic clean SaaS layout.
+- Broken screen family continuity: when a follow-up screen ignores a previously selected direction, navigation model, density, or object model, update the screen family plan and redraw.
+- Wrong screen pattern: switch pattern when the current layout fights the user's job, such as using a generic dashboard for audit work, a narrow inspector for heavy editing, or raw logs for step verification.
+- Wrong input element: replace the control when the information shape is mismatched, such as using a small input for long prompts, a toggle for multi-value choices, a slider for exact values, or a generic card for structured rubric editing.
+- Area budget mismatch: move long-form editing, rubric tables, prompts, logs, or evidence review into a wide editor, modal, full page, or dedicated detail surface instead of squeezing them into a narrow side rail.
+- Hidden answer: for work-history or AI result screens, show the user's request and the answer preview in the list row or summary area before exposing implementation logs.
+- Auditability mismatch: for AI workflow, agent, review, or orchestration screens, show input, output, role, evaluation, decision, and next instruction as inspectable evidence, not only as generic logs.
+- Over-specified controls: remove configuration controls that the user did not ask for and that do not affect the current decision, such as unnecessary agent-count settings.
+- Wrong editing surface: if the task is heavy writing or rubric editing, use a focused large editor or dialog; if the task is scan/selection, use compact lists and summary rows.
+- Correction handled too literally: classify the user's correction as a pattern, element, hierarchy, area, state, copy, or visual-system issue before changing the drawing.
 - Broken flow: redraw the screen sequence and transition points before improving any single screen.
 - Wrapped app flow: switch to the standard left-to-right flow template and expand the SVG width.
 - Missing transition trigger: add explicit action labels to arrows and make the target screen match the action result.
 - Unjustified visual system: define the design-system thesis and state model before changing colors, shadows, or typography.
-- Wrong layout pattern: switch patterns, for example from left sidebar to list-detail, wizard, inbox, canvas, or command center.
 - Lazy split layout: remove unnecessary left/right division and use a single focused working surface, top nav, stepper, stacked flow, or full-canvas composition instead.
 - Purpose mismatch: move or rewrite the primary claim and action so the target user can decide what to do next.
 - Weak hierarchy: separate claim, proof, detail, and action into different visual weights.
@@ -131,10 +152,11 @@ Stop after the first pass that reaches at least `80/100`, unless the user explic
 
 ## Visual Quality
 
-Use `references/wireframe-first.md` for app structure, `references/flow-wireframe-template.md` for stable multi-screen SVG flow layout, `references/app-layout-patterns.md` for screen type selection, `references/onboarding-flow-patterns.md` for initial setup, `references/design-system-after-wireframe.md` for `DESIGN.md` system definition and microinteractions, `references/frontend-art-direction.md` for visually led work, `references/svg-ui-quality.md` for final polish, and `references/svg-composition-rubric.md` for scoring and redesign decisions.
+Use `references/semantic-ui-planning.md` for translating requirements into product thesis, user decisions, information units, information shapes, UI element mapping, gaze route, area budget, and evidence/provenance needs; `references/screen-pattern-catalog.md` for selecting whole-screen patterns from the user job, object model, information density, and editing burden; `references/input-element-catalog.md` for choosing controls and display elements from information shape; `references/direction-varianting.md` for proposing and preserving named directions; `references/screen-family-continuity.md` for multi-screen product consistency; `references/ui-correction-loop.md` for applying user corrections as planning patches; `references/wireframe-first.md` for app structure; `references/flow-wireframe-template.md` for stable multi-screen SVG flow layout; `references/app-layout-patterns.md` for screen type selection; `references/onboarding-flow-patterns.md` for initial setup; `references/design-system-after-wireframe.md` for `DESIGN.md` system definition and microinteractions; `references/frontend-art-direction.md` for visually led work; `references/svg-ui-quality.md` for final polish; and `references/svg-composition-rubric.md` for scoring and redesign decisions.
 
 Core checks:
 
+- The UI Element Plan maps user decisions to information units, information shapes, pattern choice, elements, area budget, and evidence needs.
 - The selected layout pattern matches the user job and object model.
 - The screen contract is clear: question, state, primary action, secondary action, next screen.
 - Every transition has an explicit user action, system event, or validation result label.
@@ -156,5 +178,3 @@ Core checks:
 ## Delivery
 
 Return the absolute path to each SVG. Include the absolute path to `DESIGN.md` when one was created or updated, the assumed viewport, the main screen state, design-system thesis when a high-fidelity pass was performed, and the final rubric score when a scoring pass was performed.
-
-

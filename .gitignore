@@ -8,7 +8,11 @@ test/
 examples/*
 !examples/
 !examples/README.md
-!examples/*.svg
+!examples/wireframe-briefwell-onboarding.svg
+!examples/briefwell-boardroom.svg
+!examples/nagare-ui-element-plan.md
+!examples/nagare-screen-family-plan.md
+!examples/nagare-conversation-replay-test.md
 examples/screenshots/
 examples/**/screenshots/
 examples/**/DESIGN.md
