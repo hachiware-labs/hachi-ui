@@ -14,7 +14,7 @@ Hachi UI uses a staged workflow:
 6. **Direction and screen family planning**: for multi-screen products, propose named directions when useful, preserve the selected direction, and define the shared object model, navigation, density, and state language across screens.
 7. **Wireframe first**: define the user question, primary action, retreat path, failure state, and transition trigger.
 8. **Flow layout**: for 3-5 screen app flows, use a wide left-to-right SVG canvas instead of wrapping screens into rows.
-9. **Decision surface discipline**: for full-scale screens, keep the product UI focused on one dominant user question and move secondary proof to selected detail, collapsed diagnostics, annotations, variant frames, or `UI_PLAN.md`.
+9. **Decision surface discipline**: for full-scale screens, keep the product UI focused on one dominant user question, use plain user-facing language, and move secondary proof, diagnostics, internal IDs, and implementation terms to selected detail, collapsed diagnostics, annotations, variant frames, or `UI_PLAN.md`.
 10. **Full-scale screen validation**: when a flow frame represents a dense desktop surface, create at least one `1440x1024` screen wireframe before visual design.
 11. **Design system pass**: after the wireframe is clear, create or update `DESIGN.md` with design tokens and rationale.
 12. **High-fidelity SVG**: apply the design system to an editable SVG screen or screen sequence.

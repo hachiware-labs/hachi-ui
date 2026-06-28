@@ -94,3 +94,59 @@ When a rubric asks for concrete data, evidence chains, scroll capacity, state-sp
 - show one selected supporting detail if it directly helps that decision;
 - put full chains, review criteria, inactive variants, or capacity proofs in collapsed diagnostic sections, side sheets, external annotations, or `UI_PLAN.md`;
 - use variant frames only when comparing states is the point of the artifact.
+
+## User-Facing Explainability Gate
+
+Before accepting any full-scale screen, classify every visible label, ID, status, button, and data item into one of these categories:
+
+1. User-facing decision information.
+2. User-facing context.
+3. Supporting evidence.
+4. Diagnostic detail.
+5. Internal implementation detail.
+
+The primary screen may show only categories 1-3 by default. Hide or collapse internal implementation details unless the current user is explicitly debugging internals and the detail changes the next action.
+
+Details that should usually be hidden or translated:
+
+- internal IDs such as `run_0014`, `evt_0001`, `dsp_0007`, or code-like row IDs;
+- runtime names such as `Codex CLI`;
+- implementation terms such as `ledger`, `evidence`, `criteria`, `input-output chain`, and `state variants`;
+- pending or workflow labels that require product-model knowledge before the user can act.
+
+Translate internal terms into user work language:
+
+- `ledger` -> `履歴`;
+- `evidence` -> `根拠`;
+- `criteria` -> `確認条件`;
+- `diff draft` -> `変更案`;
+- `runtime` -> `実行環境`, only when needed;
+- `agent` -> `担当AI` or `作業担当`.
+
+## Detail Screen Rule
+
+A detail screen is not a place to show all details.
+
+A detail screen should show the minimum information needed to decide the next action for one selected object. Additional system facts belong in collapsed metadata, diagnostics, side sheets, or developer/debug views.
+
+Default detail screen hierarchy:
+
+1. Human-readable state sentence.
+2. Current object and current owner or actor in user language.
+3. Immediate action or no-action-needed state.
+4. One reason or proof that supports the action.
+5. Optional `詳細を開く` entry point.
+
+Avoid making IDs, logs, runtime names, assignment records, or provenance chains visible by default unless the screen's dominant job is diagnostic review.
+
+## Plain-Language Review
+
+After rendering the SVG, inspect the screen and answer:
+
+- Which visible words require prior knowledge of the product internals?
+- Which visible facts do not change the user's next action?
+- Which labels can be translated into normal work language?
+- Which details should move behind `詳細を開く`?
+- Would this still make sense if internal IDs were removed?
+
+If the answer reveals unexplained internal terminology in the main surface, redraw before claiming 90+.

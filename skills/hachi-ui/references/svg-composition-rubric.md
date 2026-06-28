@@ -24,6 +24,27 @@ Use this rubric after generating a screen. Score strictly out of 100. If the sco
 - `50-59`: Mostly a list of elements; redesign required.
 - `0-49`: Rebuild from purpose and structure.
 
+## Score Caps
+
+Do not score a screen above 90 if a first-time target user cannot understand the main state and next action without knowing the product's internal object model.
+
+Apply these caps strictly:
+
+- Max `89`: any internal IDs are visible in the primary decision surface.
+- Max `87`: implementation terms appear without user-facing translation.
+- Max `85`: the detail screen explains system structure more than the user's next decision.
+- Max `84`: diagnostics, logs, evidence chains, or inactive variants visually compete with the primary action.
+- Max `79`: the user cannot answer "Do I need to act now?" within 5 seconds.
+- Max `75`: the screen would require a glossary to understand its main labels.
+
+A 90+ screen must pass the plain-language test:
+
+1. What is this object?
+2. What state is it in?
+3. Do I need to do anything now?
+4. Why is that safe?
+5. Where can I inspect details if needed?
+
 ## Strict Review Questions
 
 Ask these before accepting the screen:
@@ -48,6 +69,10 @@ Ask these before accepting the screen:
 - Are state variants shown in the product screen only when the real product would show them simultaneously?
 - Is the current state's primary action clear, with inactive state-specific actions moved to variant frames, external annotations, or `UI_PLAN.md`?
 - Does selected supporting detail show only the evidence needed for the current decision, while full evidence chains and review criteria stay collapsed or external unless the current task is diagnostic review?
+- Are all visible labels, statuses, IDs, and data items understandable without product-internal knowledge?
+- Are internal IDs hidden from the primary decision surface?
+- Are implementation terms translated into user work language, such as `履歴`, `根拠`, `確認条件`, `変更案`, `担当AI`, or `作業担当`?
+- Can the target user answer "Do I need to act now?" within 5 seconds?
 - Does the screen avoid asking for the same identity, value, reason, schedule, row, or extracted data more than once?
 - Are required details classified by field responsibility before they become controls?
 - Are repeated similar items supported by copy, template, bulk-add, import, or generation controls?
@@ -67,6 +92,8 @@ Penalize overexposed information when:
 - rubric evidence is displayed as product UI instead of plan annotation;
 - diagnostic details compete with the primary action;
 - state variants appear as controls even though they are not available in the current state;
+- internal IDs or implementation terms appear in the main surface;
+- the screen would require a glossary before the user can decide the next action;
 - the screen feels like a system audit sheet rather than a user decision surface.
 
 ## Repair Playbook
@@ -85,6 +112,9 @@ Penalize overexposed information when:
 - Evidence inspector is thin: show selected input, output, judgment, and next instruction only when they support the current decision; collapse or externalize the full chain when it would compete with the primary action.
 - Scroll behavior is unproven: add folded sections, visible scroll track, and remaining count without turning diagnostics into the main surface.
 - Rubric proof is overexposed: move secondary proof items out of the product UI and into plan annotations, external notes, or collapsed states.
+- Internal terminology is visible: translate it into user work language or move it behind `詳細を開く`.
+- Internal IDs are visible: replace them with user-facing names, dates, states, or human-readable object labels in the main surface.
+- Detail screen is too diagnostic: rebuild it around the human-readable state sentence, current object, owner or actor, immediate action, one reason, and a single details entry point.
 - Priority is flat: reduce equal-card layouts and create a dominant anchor with quieter supporting regions.
 - Gaze path is weak: add meaningful alignment, flow lines, spatial grouping, or a Z/F/center-out structure.
 - SVG is decorative: replace ornamental shapes with process lanes, relation lines, status fields, before/after geometry, or bottleneck emphasis.
