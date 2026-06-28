@@ -102,6 +102,7 @@ Inside each screen frame, draw at least these semantic units:
 - a compact state or exception unit, such as empty, blocked, invalid, failed, waiting, selected, or confirmed;
 - a primary action control and one retreat control when retreat is plausible;
 - a supporting evidence, detail, or option unit when the action would otherwise feel unjustified.
+- a field responsibility cue on input-heavy screens, such as inherited value, selectable candidate, review-only evidence, correction table, or exception-only reason.
 
 For AI, audit, moderation, checkout, booking, approval, import, and learning progress flows, show the reason or evidence that makes the next action trustworthy. A badge alone is not enough.
 
@@ -127,6 +128,7 @@ Redraw before delivery if any item fails:
 - A transition arrow lacks a trigger label.
 - The target screen does not match the trigger.
 - The primary action is unclear on any screen.
+- Required details are drawn as blank inputs when they should be auto-filled, selected, reviewed, corrected, or displayed as evidence.
 - A required failure or validation state is missing.
 - A required recovery, edit, retry, undo, or cancellation path is missing.
 - A supporting surface such as metrics, library, logs, or templates becomes the next screen without being the user's required decision.

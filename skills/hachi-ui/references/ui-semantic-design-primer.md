@@ -20,10 +20,11 @@ Answer these before wireframing:
 4. What does the user need to decide, input, verify, compare, repair, approve, or understand?
 5. What information units are necessary for that decision?
 6. For each unit, is the user entering it, viewing it, editing it, verifying it, comparing it, or recovering from it?
-7. Which units deserve wide area because they carry writing, comparison, evidence, audit, or risk?
-8. What state can each unit be in: empty, draft, running, invalid, stale, conflicted, approved, failed, blocked, recovered?
-9. What evidence or provenance must be visible for the user to trust the screen?
-10. What should the user's gaze encounter first, second, and last?
+7. Which required details are truly typed by the user, selected, auto-filled, review-only, exception-only, or evidence/display?
+8. Which units deserve wide area because they carry writing, comparison, evidence, audit, or risk?
+9. What state can each unit be in: empty, draft, running, invalid, stale, conflicted, approved, failed, blocked, recovered?
+10. What evidence or provenance must be visible for the user to trust the screen?
+11. What should the user's gaze encounter first, second, and last?
 
 ## Object-First Thinking
 
@@ -137,6 +138,19 @@ Common viewing intents:
 
 A control is wrong when it ignores intent: a toggle for scope, a card for comparison, a KPI without interpretation, a textarea for a structured rule, or a raw log for audit.
 
+## Field Responsibility
+
+Required details are not automatically input fields. Before drawing controls, divide them by responsibility:
+
+- user input: new information only the current user can provide;
+- user selection: options, candidates, templates, dates, roles, classifications, or generated variants;
+- auto-filled: values from profile, selected object, previous step, integration, upload/OCR, history, schedule, or inference;
+- review-only: values the user must inspect but should not retype;
+- exception-only input: reasons, overrides, escalations, deviations, or corrections after a state changes;
+- evidence/display: provenance, audit, source, metric, policy, or context.
+
+If a screen treats most required details as blank user input, it is usually asking the user to do the system's work.
+
 ## Area Budget Heuristic
 
 Give the most area to the hardest cognition, not to the most decorative region.
@@ -226,12 +240,13 @@ Use Hachi UI's pattern language in this order:
 1. `ui-semantic-design-primer.md`: decide the product thesis, objects, user decisions, information units, state, evidence, area budget, and gaze route.
 2. `semantic-ui-planning.md`: write the UI Element Plan.
 3. `information-shape-catalog.md`: classify input/view information intent.
-4. `screen-pattern-catalog.md`: choose the whole-screen work pattern.
-5. `screen-pattern-quality-audit.md`: avoid weak generic patterns.
-6. `information-unit-patterns.md`: choose repeated or dominant unit patterns.
-7. `input-element-catalog.md`: choose atomic controls and displays.
-8. `wireframe-first.md`: draw the monochrome structure.
-9. `design-system-after-wireframe.md`: define visual system only after the meaning works.
+4. `input-friction-patterns.md`: classify field responsibility and repair repeated input burden.
+5. `screen-pattern-catalog.md`: choose the whole-screen work pattern.
+6. `screen-pattern-quality-audit.md`: avoid weak generic patterns.
+7. `information-unit-patterns.md`: choose repeated or dominant unit patterns.
+8. `input-element-catalog.md`: choose atomic controls and displays.
+9. `wireframe-first.md`: draw the monochrome structure.
+10. `design-system-after-wireframe.md`: define visual system only after the meaning works.
 
 ## Common Failure Modes
 
@@ -244,6 +259,7 @@ Redesign from semantics when:
 - a table is used when the user needs comparison, evidence, or recovery;
 - cards are used because the content is unknown;
 - inputs are selected before the input intent is known;
+- required details are all drawn as blank fields instead of being split into input, selection, auto-fill, review-only, exception-only, and evidence/display;
 - the screen has no explicit state model;
 - the user cannot tell what action produced the next screen;
 - high-fidelity styling is compensating for a weak information model.
@@ -270,6 +286,13 @@ information_units:
     state_model: ["..."]
     evidence_need: "none | light | strong | audit"
     area_need: "compact | medium | large | very_large"
+field_responsibility:
+  user_input: ["..."]
+  user_selection: ["..."]
+  auto_filled: ["..."]
+  review_only: ["..."]
+  exception_only_input: ["..."]
+  evidence_display: ["..."]
 screen_pattern:
   name: "..."
   reason: "..."

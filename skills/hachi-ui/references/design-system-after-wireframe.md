@@ -31,7 +31,7 @@ Define these before styling:
 - Interaction risk: reversible, reviewable, destructive, permissioned, payment-related, or public-facing.
 - Environment: desktop, mobile, large display, embedded widget, dark room, field use, or presentation.
 - Source material: code, screenshots, brand files, documents, decks, competitors, or none.
-- Planning source: `UI_PLAN.md` screen inventory, information hierarchy, input friction audit, state language, and evidence model.
+- Planning source: `UI_PLAN.md` screen inventory, information hierarchy, field responsibility matrix, input friction audit, state language, and evidence model.
 
 ## Design System Contract
 

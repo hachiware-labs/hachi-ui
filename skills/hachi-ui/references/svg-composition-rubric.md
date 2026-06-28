@@ -12,7 +12,7 @@ Use this rubric after generating a screen. Score strictly out of 100. If the sco
 | SVG and diagram expression | 15 | SVG expresses structure, relationship, flow, comparison, emphasis, or state. |
 | Aesthetic direction and brand character | 10 | The screen has a specific visual thesis and one memorable anchor. |
 | Operability and state expression | 10 | Controls, current state, feedback, and risky actions are understandable. |
-| Input friction and readability | 10 | Meaning is available with little effort, and known, same-as, extracted, or role-owned values are not re-entered. |
+| Input friction and readability | 10 | Meaning is available with little effort, and required details are split into typed, selected, auto-filled, review-only, exception-only, and evidence/display values instead of being re-entered. |
 | Implementation and responsiveness | 10 | The SVG is robust, editable, accessible enough for a prototype, and not over-fixed. |
 
 ## Redesign Thresholds
@@ -41,6 +41,7 @@ Ask these before accepting the screen:
 - Is there a clear aesthetic direction beyond generic clean UI, generic cards, or decorative chrome?
 - Are current state, action priority, disabled/loading/error/empty states, and recovery paths represented when relevant?
 - Does the screen avoid asking for the same identity, value, reason, schedule, row, or extracted data more than once?
+- Are required details classified by field responsibility before they become controls?
 - Are repeated similar items supported by copy, template, bulk-add, import, or generation controls?
 - Are exception reasons requested only after exception actions?
 - Would longer labels, changed data, or a narrower preview break the layout?
@@ -57,7 +58,7 @@ Ask these before accepting the screen:
 - SVG is decorative: replace ornamental shapes with process lanes, relation lines, status fields, before/after geometry, or bottleneck emphasis.
 - Beauty is generic: choose a sharper visual thesis through typography scale, line weight, spacing rhythm, color role, and one recognizable motif.
 - Operability is weak: add selected, active, disabled, loading, empty, error, confirmation, or undo state where it affects the user's next step.
-- Input friction is high: replace repeated fields with inherited values, same-as controls, extracted-value correction, templates, duplicate/bulk-add, or owner handoff.
+- Input friction is high: replace repeated fields or review-only/evidence-only blank inputs with inherited values, same-as controls, extracted-value correction, review blocks, evidence panels, templates, duplicate/bulk-add, or owner handoff.
 - Cognitive load is high: remove duplicate labels, shorten copy, group related facts, and let the diagram explain relationships.
 - Responsiveness is brittle: reduce text dependence inside narrow shapes, keep stable dimensions, and provide mobile-specific composition when needed.
 

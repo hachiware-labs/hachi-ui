@@ -8,6 +8,8 @@ Treat repeated meaning as friction.
 
 A screen has input friction when it asks for information that is already known, can be inferred from an earlier step, duplicates a similar field, or asks the user to create multiple near-identical items. Before adding a field, decide whether the information should be reused, confirmed, corrected, selected, or entered.
 
+`Required detail` in a UI plan means information needed for judgment. It does not mean the user should type every item. Separate handled information into user input, user selection, auto-filled values, review-only values, exception-only input, and evidence/display before drawing controls.
+
 ## Friction Audit
 
 For every input unit, classify its source:
@@ -93,6 +95,19 @@ Avoid asking one role to enter information owned by another role.
 Add this to a UI Element Plan when input appears:
 
 ```yaml
+field_responsibility:
+  user_input:
+    - "補足メモ"
+  user_selection:
+    - "候補日時"
+  auto_filled:
+    - "患者基本情報"
+  review_only:
+    - "検査値"
+  exception_only_input:
+    - "例外理由"
+  evidence_display:
+    - "カルテ履歴"
 input_friction_audit:
   - input: "支払先口座"
     source: "already_known"
@@ -108,6 +123,7 @@ input_friction_audit:
 
 Show friction reduction directly in the wireframe:
 
+- Do not draw all required details as blank fields. Show many of them as inherited rows, review blocks, evidence panels, selected chips, or correction tables.
 - Prefilled or inherited values should look different from blank fields.
 - Reused values should show their source, such as `前回値`, `プロフィールから`, `領収書OCR`, `選択した候補者`, or `医師指示から`.
 - Repeated similar rows should have `一括追加`, `複製`, `テンプレート`, or `前回からコピー`.
@@ -119,6 +135,7 @@ Show friction reduction directly in the wireframe:
 Redraw or revise the plan when:
 
 - the same identity, address, requester, assignee, role, or object is entered more than once;
+- a `Required detail` list is converted directly into blank input fields without field responsibility classification;
 - an uploaded/imported/extracted value is retyped instead of corrected;
 - a user must create several similar items one by one without template, copy, or bulk controls;
 - a reason field appears on the happy path when it is only needed for exception or override;

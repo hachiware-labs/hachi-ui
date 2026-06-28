@@ -6,7 +6,7 @@ Use this reference before visual design for SaaS, tools, dashboards, mobile apps
 
 Use monochrome wireframes to prove navigation, information hierarchy, state, and user decisions before adding beauty. Before wireframing product UI, complete semantic UI planning: product thesis, user decisions, information units, information shapes, screen pattern, element mapping, area budget, gaze route, and evidence/provenance needs. A beautiful screen with a broken workflow is a failed prototype.
 
-For reusable app/product work, create or update `UI_PLAN.md` before drawing. The wireframe should visualize the screen inventory, flow causality, information plan, input friction audit, state, and recovery paths from that file.
+For reusable app/product work, create or update `UI_PLAN.md` before drawing. The wireframe should visualize the screen inventory, flow causality, information plan, field responsibility, input friction audit, state, and recovery paths from that file.
 
 ## Constraints
 
@@ -24,7 +24,7 @@ For reusable app/product work, create or update `UI_PLAN.md` before drawing. The
 
 For product UI, write or infer the UI Element Plan from `semantic-ui-planning.md` first. The screen contract should be a result of that plan, not a substitute for it. If long prompts, rubrics, logs, or evidence review appear in the plan, allocate enough space before drawing.
 
-If the screen contains input, also run the input friction audit from `input-friction-patterns.md`. The wireframe should show whether values are inherited, copied from earlier steps, extracted from files, suggested from history, selected from templates, corrected, or genuinely typed from blank.
+If the screen contains input, also run the field responsibility classification and input friction audit from `input-friction-patterns.md`. The wireframe should show whether values are inherited, copied from earlier steps, extracted from files, suggested from history, selected from templates, corrected, reviewed only, exception-only, or genuinely typed from blank.
 
 When `UI_PLAN.md` exists, update it before changing the wireframe. Do not make the SVG the only place where screen purpose, handled information, or transition logic is recorded.
 
@@ -80,6 +80,7 @@ For input-heavy screens, also include at least one friction-reduction unit when 
 
 - inherited value row, such as `プロフィールから`, `前回値`, `選択中の対象から`, or `申請者から`;
 - extracted value correction, such as `OCRから`, `CSVから`, `検査結果から`, or `ログから`;
+- review-only block for values that matter to judgment but should not be retyped;
 - same-as or copy control, such as `前回と同じ`, `請求先と同じ`, `テンプレートから作成`, or `複製`;
 - exception-only reason field that appears only after override, rejection, escalation, or deviation;
 - owner handoff row instead of asking the current user to fill another role's information.
@@ -122,6 +123,7 @@ Reject and redraw if any of these are true:
 - A supporting screen interrupts the main path where a decision, recovery, or result screen should follow.
 - The plan names empty, error, blocked, or recovery states but the wireframe does not show them as visible UI fragments.
 - The same meaning is entered more than once instead of being inherited, copied, confirmed, or corrected.
+- Required details from `UI_PLAN.md` are drawn as blank fields without separating user input, selection, auto-filled, review-only, exception-only, and evidence/display.
 - Extracted or uploaded data is shown and then retyped from blank instead of corrected.
 - Repeated similar rows have no copy, template, bulk-add, import, or generation option.
 - Exception reason fields appear before the user chooses an exception action.

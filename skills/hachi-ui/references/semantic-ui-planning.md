@@ -19,16 +19,17 @@ For reusable app/product work, write this planning into `UI_PLAN.md`. Treat olde
 5. Information units
 6. Input/view information patterns
 7. Information shapes
-8. Screen pattern
-9. Information-unit patterns
-10. Element mapping
-11. Input friction audit
-12. Area budget
-13. Gaze route
-14. Flow causality and primary path
-15. State, validation, and recovery coverage
-16. Evidence/provenance needs
-17. Rejected patterns and why
+8. Field responsibility classification
+9. Screen pattern
+10. Information-unit patterns
+11. Element mapping
+12. Input friction audit
+13. Area budget
+14. Gaze route
+15. Flow causality and primary path
+16. State, validation, and recovery coverage
+17. Evidence/provenance needs
+18. Rejected patterns and why
 
 ## UI Element Plan Schema
 
@@ -58,6 +59,22 @@ information_units:
     recommended_element: summary_card
     area_need: large
     reason: "The answer is the first thing the user wants to confirm."
+field_responsibility:
+  user_input:
+    - "追加指示"
+  user_selection:
+    - "修正方針"
+  auto_filled:
+    - "依頼者"
+    - "対象データ"
+  review_only:
+    - "最終回答"
+    - "実行ステップ"
+  exception_only_input:
+    - "例外理由"
+  evidence_display:
+    - "参照元"
+    - "監査ログ"
 screen_pattern:
   name: Agent Execution Trace
   reason: "The main job is step-by-step verification, not dashboard overview."
@@ -105,6 +122,23 @@ rejected_patterns:
 Use `information-shape-catalog.md` before choosing components. A UI plan should say whether each information unit is being entered, selected, edited, reviewed, verified, compared, or recovered. Then classify it as an input pattern such as `natural_language_request_input`, `structured_form_input`, `file_source_input`, `permission_scope_input`, or as a viewing pattern such as `dense_record_view`, `timeline_audit_view`, `evidence_provenance_view`, `metric_trend_view`, or `relationship_dependency_view`.
 
 If a plan says only `form`, `table`, `card`, `modal`, or `dashboard`, the information pattern is still underspecified.
+
+## Field Responsibility Classification
+
+After listing required information, classify who or what is responsible for each item. Required information is not the same as user input.
+
+Use these categories in `UI_PLAN.md` for every screen that handles input or verification:
+
+- `user_input`: genuinely new information the current user must type or capture.
+- `user_selection`: the user chooses from candidates, templates, generated variants, dates, roles, classifications, or saved values.
+- `auto_filled`: profile, selected object, previous step, integration, upload/OCR, history, schedule, or system inference supplies the value.
+- `review_only`: the user inspects or confirms the information, but should not re-enter it.
+- `exception_only_input`: the field appears only after override, rejection, escalation, deviation, failed validation, or correction.
+- `evidence_display`: provenance, audit trail, metric, source, policy, status, or context shown to justify the decision.
+
+Before choosing a control, ask: "Should this be typed, selected, corrected, confirmed, inherited, or just displayed as evidence?" If the answer is not `user_input`, avoid drawing it as a blank field.
+
+Repair weak plans by moving role-owned, extracted, previously entered, or system-known values out of `user_input` and into auto-filled, review-only, evidence, or owner-handoff units.
 
 ## Input Friction Audit
 
