@@ -28,6 +28,25 @@ Common widths:
 
 For larger UI frames, increase `screenW`, `screenH`, `gap`, and `canvasW` together. Keep one row.
 
+## Not A Density Proof
+
+フロー枠は導線と状態遷移を読むための圧縮表現です。デスクトップアプリ画面を表している場合でも、フロー枠だけで実UI密度、テーブル行数、エディタ容量、インスペクター幅、サイドバー幅、行折り返し、ファーストビュー内の操作収容を判断しないでください。
+
+次のいずれかが重要なら、フロー承認後またはビジュアルデザイン前にフルスケール画面を別SVGで作成します:
+
+- テーブル、密な一覧、カラム設計。
+- タイムライン、監査ログ、実行トレース。
+- プロンプト、長文エディタ、ルーブリック。
+- 証跡レビュー、比較、差分、検証面。
+- インスペクター、設定、フォーム、承認理由。
+- 長い日本語ラベルや説明文。
+
+フルスケール画面の既定:
+
+- デスクトップ: `1440x1024`。
+- モバイル: `390x844`。
+- ファイル名: `work-request-composer-1440.svg`, `work-run-trace-1440.svg`, `result-review-1440.svg` のように画面名とサイズを含める。
+
 ## Screen Slots
 
 For screen index `i`, zero-based:

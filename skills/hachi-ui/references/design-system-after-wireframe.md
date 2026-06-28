@@ -33,6 +33,12 @@ Define these before styling:
 - Source material: code, screenshots, brand files, documents, decks, competitors, or none.
 - Planning source: `UI_PLAN.md` screen inventory, information hierarchy, field responsibility matrix, input friction audit, state language, and evidence model.
 
+## Density Gate Before Styling
+
+Do not promote a compressed flow frame directly to visual design when it represents a dense desktop screen. Before `DESIGN.md` or high-fidelity styling, create at least one full-scale wireframe when the product surface contains a table, timeline, prompt editor, rubric, evidence review, inspector, dense form, or long Japanese labels.
+
+Use realistic UI density in that full-scale wireframe: auxiliary text around `12px`, body/table text around `13-14px`, section headings around `16-18px`, page headings around `20-24px`, plausible row heights, visible scroll regions, and controls that could exist in a real product.
+
 ## Design System Contract
 
 Create a compact system before drawing the final screen. When the system needs to persist across screens, write it as `DESIGN.md`.

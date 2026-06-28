@@ -14,9 +14,10 @@ Hachi UI uses a staged workflow:
 6. **Direction and screen family planning**: for multi-screen products, propose named directions when useful, preserve the selected direction, and define the shared object model, navigation, density, and state language across screens.
 7. **Wireframe first**: define the user question, primary action, retreat path, failure state, and transition trigger.
 8. **Flow layout**: for 3-5 screen app flows, use a wide left-to-right SVG canvas instead of wrapping screens into rows.
-9. **Design system pass**: after the wireframe is clear, create or update `DESIGN.md` with design tokens and rationale.
-10. **High-fidelity SVG**: apply the design system to an editable SVG screen or screen sequence.
-11. **Verification**: render the SVG, run the smoke check, and lint `DESIGN.md` when available.
+9. **Full-scale screen validation**: when a flow frame represents a dense desktop surface, create at least one `1440x1024` screen wireframe before visual design.
+10. **Design system pass**: after the wireframe is clear, create or update `DESIGN.md` with design tokens and rationale.
+11. **High-fidelity SVG**: apply the design system to an editable SVG screen or screen sequence.
+12. **Verification**: render the SVG, run the smoke check, and lint `DESIGN.md` when available.
 
 ## Quick Route
 
@@ -25,7 +26,7 @@ Use the smallest route that fits the request:
 - **Light single screen**: semantic primer, minimal plan, wireframe, rubric.
 - **Normal app/product screen**: primer, `UI_PLAN.md`, information shape, field responsibility, screen pattern, unit pattern, input friction audit, input/display element, wireframe.
 - **AI, audit, settings, import, approval, or regulated work**: normal route plus pattern quality audit and explicit evidence/provenance modeling.
-- **Multi-screen flow**: normal route plus screen family continuity, flow wireframe template, and onboarding patterns when relevant.
+- **Multi-screen flow**: normal route plus screen family continuity, flow wireframe template, onboarding patterns when relevant, and at least one full-scale screen when density or long content matters.
 - **High-fidelity or brand-sensitive work**: wireframe first, then design system and frontend art direction.
 
 ## Standard Artifacts
@@ -35,9 +36,11 @@ Use these files for reusable app/product work:
 - `requirements.md`: user-facing requirements, assumptions, users, goals, constraints, and success criteria.
 - `UI_PLAN.md`: the source of truth for product thesis, users/roles, core objects, screen inventory, flow causality, information units, field responsibility matrix, input friction audit, screen family continuity, and rejected patterns.
 - `wireframe-flow.svg`: the monochrome visual flow generated from `UI_PLAN.md`.
+- `*-1440.svg`: full-scale desktop wireframe used to validate real UI density for tables, timelines, editors, rubrics, evidence review, inspectors, dense forms, and long Japanese labels.
 - `DESIGN.md`: visual system file used only after the wireframe is ready for high-fidelity styling.
 
 For small one-off screens, an SVG alone is acceptable. For multi-screen flows, prefer `requirements.md`, `UI_PLAN.md`, and `wireframe-flow.svg`.
+Do not treat `wireframe-flow.svg` as proof that final desktop density works. It validates navigation and state flow; full-scale screens validate actual layout capacity.
 
 ## DESIGN.md
 
@@ -57,6 +60,7 @@ examples/<project>/requirements.md
 examples/<project>/UI_PLAN.md
 examples/<project>/DESIGN.md
 examples/<project>/wireframe-flow.svg
+examples/<project>/work-run-trace-1440.svg
 examples/<project>/screenshots/<screen-or-flow>.png
 ```
 

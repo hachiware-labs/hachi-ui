@@ -22,11 +22,14 @@ When the user does not specify a target, create one primary SVG screen:
 
 - Desktop product screen: `1440x1024`
 - Multi-screen app flow: use the standard left-to-right template in `references/flow-wireframe-template.md`.
+- Full-scale desktop validation screen: `1440x1024`, named like `work-request-composer-1440.svg`, when a flow frame represents a dense desktop surface.
 - Mobile app screen: `390x844`
 - Dashboard or operations tool: dense, scannable, restrained UI
 - Marketing or brand page: use visual assets only when the user asks for that kind of page
 
 For product or app work that should be reusable, create or update the standard artifacts from `references/ui-artifact-workflow.md`: `requirements.md` when requirements should be preserved, `UI_PLAN.md` as the central semantic plan, `wireframe-flow.svg` for multi-screen wireframes, and `DESIGN.md` only after the wireframe is ready for visual design.
+
+Do not treat compressed flow frames as proof that a real desktop screen works. When tables, timelines, editors, rubrics, evidence review, inspectors, dense forms, or long Japanese labels matter, create at least one full-scale screen wireframe before visual design.
 
 Ask a short clarification only when missing information would materially change the screen, such as platform, brand constraints, or the core workflow. Otherwise make conservative assumptions and state them briefly.
 
@@ -58,19 +61,20 @@ Before drawing, define these points in scratch notes or the final summary when u
 5. For multi-screen product surfaces, read `references/screen-family-continuity.md` and define the screen family plan inside `UI_PLAN.md`: global navigation, core objects, shared density, shared state language, primary evidence model, and relationships between screens.
 6. For user-requested revisions, read `references/ui-correction-loop.md` and treat corrections as `UI_PLAN.md` patches before redrawing the SVG.
 7. For app/product work, read `references/wireframe-first.md` and create a monochrome flow or screen before adding visual styling.
-8. For 3-5 screen app flows, onboarding flows, setup flows, and screen sequences, read `references/flow-wireframe-template.md` and use its left-to-right SVG grid unless the user explicitly asks otherwise.
+8. For 3-5 screen app flows, onboarding flows, setup flows, and screen sequences, read `references/flow-wireframe-template.md` and use its left-to-right SVG grid unless the user explicitly asks otherwise. Treat it as flow validation, not final screen density validation.
 9. Pick the layout pattern from `references/app-layout-patterns.md` and `references/screen-pattern-catalog.md`; decompose the chosen screen with `references/information-unit-patterns.md`; do not default to a left sidebar or split-screen layout unless it fits the user's job.
 10. If the request involves signup, import, workspace creation, permissions, first run, or empty product state, read `references/onboarding-flow-patterns.md`.
 11. Decide the semantic structure in `UI_PLAN.md` before drawing: product thesis, user decisions, information units, input/view information patterns, information shapes, field responsibility classification, whole-screen pattern, unit patterns, input friction and reuse strategy, input/display/evidence elements, claim, evidence, details, actions, primary path causality, recovery paths, and which elements need expanded editing or inspection space.
-12. After the wireframe is clear and before high-fidelity styling, read `references/design-system-after-wireframe.md` and define or update `DESIGN.md` using a Claude Design-style source-driven workflow and Google `design.md`-style tokens plus rationale.
-13. For landing pages, brand pages, or visually led prototypes, read `references/frontend-art-direction.md` before the high-fidelity pass.
-14. Choose a screen composition, then sketch with SVG layers that guide the eye through that hierarchy.
-15. Create an SVG file in the workspace. Use `viewBox`, explicit `width` and `height`, `<title>`, and `<desc>`.
-16. Build with editable SVG primitives: `rect`, `path`, `circle`, `line`, `text`, `g`, `defs`, and reusable symbols when helpful.
-17. Use real UI density and controls: icon buttons, segmented controls, tabs, toggles, sliders, inputs, menus, tables, and status indicators when the screen calls for them.
-18. Render or inspect the SVG before delivery. Fix text overflow, overlaps, off-canvas content, illegible contrast, and accidental blank output.
-19. Score the result with `references/svg-composition-rubric.md`. If the score is below `80`, redesign from composition and hierarchy first, not by adding polish.
-20. Run `python scripts/svg_smoke_check.py path/to/file.svg` when Python is available.
+12. If a flow frame represents a dense desktop or mobile screen, create a full-scale `1440x1024` desktop or `390x844` mobile wireframe before high-fidelity styling.
+13. After the wireframe is clear and before high-fidelity styling, read `references/design-system-after-wireframe.md` and define or update `DESIGN.md` using a Claude Design-style source-driven workflow and Google `design.md`-style tokens plus rationale.
+14. For landing pages, brand pages, or visually led prototypes, read `references/frontend-art-direction.md` before the high-fidelity pass.
+15. Choose a screen composition, then sketch with SVG layers that guide the eye through that hierarchy.
+16. Create an SVG file in the workspace. Use `viewBox`, explicit `width` and `height`, `<title>`, and `<desc>`.
+17. Build with editable SVG primitives: `rect`, `path`, `circle`, `line`, `text`, `g`, `defs`, and reusable symbols when helpful.
+18. Use real UI density and controls: icon buttons, segmented controls, tabs, toggles, sliders, inputs, menus, tables, and status indicators when the screen calls for them.
+19. Render or inspect the SVG before delivery. Fix text overflow, overlaps, off-canvas content, illegible contrast, and accidental blank output.
+20. Score the result with `references/svg-composition-rubric.md`. If the score is below `80`, redesign from composition and hierarchy first, not by adding polish.
+21. Run `python scripts/svg_smoke_check.py path/to/file.svg` when Python is available.
 
 ## Quick Route
 
@@ -79,7 +83,7 @@ Use the smallest route that can produce a sound screen:
 - **Light single screen**: read `ui-semantic-design-primer.md`, create the minimal semantic plan, then use `wireframe-first.md` and the rubric.
 - **Normal product/app screen**: read primer, `ui-artifact-workflow.md`, `semantic-ui-planning.md`, `information-shape-catalog.md`, `screen-pattern-catalog.md`, `information-unit-patterns.md`, `input-friction-patterns.md`, `input-element-catalog.md`, create `UI_PLAN.md`, then wireframe.
 - **AI, audit, settings, import, approval, or regulated work**: use the normal route plus `screen-pattern-quality-audit.md` and model evidence/provenance explicitly.
-- **Multi-screen product flow**: use the normal route plus `screen-family-continuity.md`, `flow-wireframe-template.md`, and onboarding patterns when setup or first run is involved.
+- **Multi-screen product flow**: use the normal route plus `screen-family-continuity.md`, `flow-wireframe-template.md`, and onboarding patterns when setup or first run is involved. Add a full-scale `*-1440.svg` screen when density, copy length, tables, editors, timelines, evidence, or review surfaces matter.
 - **High-fidelity or brand-sensitive work**: complete the wireframe route first, then read `design-system-after-wireframe.md` and, for visually led screens, `frontend-art-direction.md`.
 
 ## Wireframe First
@@ -90,6 +94,7 @@ For application screens, make the first pass monochrome unless the user explicit
 - Use no shadows, gradients, hero imagery, decorative texture, or brand color.
 - Show 3-5 connected screens when the request is about a workflow, setup, or onboarding.
 - For sequential flows, use the left-to-right grid in `references/flow-wireframe-template.md`; make the SVG wider instead of wrapping rows.
+- Do not judge final desktop density from the compressed flow frames. Create a full-scale `1440x1024` screen wireframe for tables, timelines, prompt editors, rubrics, evidence review, inspectors, dense forms, or long Japanese labels.
 - Label the primary action, secondary action, back/cancel path, empty state, error state, and confirmation state when relevant.
 - Label every transition arrow with the exact trigger, such as a button click, selection change, submit action, OAuth success, validation error, or generation completion.
 - Use the user's language for all UI labels and screen notes unless the user requests another locale.
@@ -124,6 +129,7 @@ Iterate without asking the user when the critique points to objective defects:
 - Correction handled too literally: classify the user's correction as a pattern, element, hierarchy, area, state, copy, or visual-system issue before changing the drawing.
 - Broken flow: redraw the screen sequence and transition points before improving any single screen.
 - Wrapped app flow: switch to the standard left-to-right flow template and expand the SVG width.
+- Flow frame used as final layout: create a full-scale screen wireframe before judging font size, table density, editor capacity, sidebars, inspectors, line wrapping, or above-the-fold controls.
 - Missing transition trigger: add explicit action labels to arrows and make the target screen match the action result.
 - Broken flow causality: reorder screens when a supporting surface such as metrics, saved items, templates, logs, or settings interrupts the user's primary path; make it an optional branch or compact supporting unit unless the user must decide from it.
 - Missing recovery visibility: when the plan names empty, invalid, failed, blocked, waiting, abandoned, or missed states, draw the reason and recovery action as visible UI, not only as contract text.
