@@ -8,6 +8,8 @@ Translate the brief into a UI Element Plan before drawing boxes. Decide what the
 
 A screen should not be a list of plausible components. It should be a semantic arrangement of information units that helps the user make the next decision.
 
+For reusable app/product work, write this planning into `UI_PLAN.md`. Treat older `semantic-plan.md` files as legacy equivalents, but prefer `UI_PLAN.md` for new work so screen inventory, information units, input friction, and flow causality stay in one authoritative file.
+
 ## Planning Order
 
 1. Product thesis
@@ -20,15 +22,19 @@ A screen should not be a list of plausible components. It should be a semantic a
 8. Screen pattern
 9. Information-unit patterns
 10. Element mapping
-11. Area budget
-12. Gaze route
-13. State coverage
-14. Evidence/provenance needs
-15. Rejected patterns and why
+11. Input friction audit
+12. Area budget
+13. Gaze route
+14. Flow causality and primary path
+15. State, validation, and recovery coverage
+16. Evidence/provenance needs
+17. Rejected patterns and why
 
 ## UI Element Plan Schema
 
 Use this structure in scratch notes or examples before drawing.
+
+When artifact files are being created, this schema belongs inside `UI_PLAN.md`, usually under `Screen Information Plan`, `Input Friction Audit`, `Flow Causality`, and `Rejected Patterns`.
 
 ```yaml
 product_thesis: "What this product must make possible or trustworthy."
@@ -61,6 +67,15 @@ unit_patterns:
   evidence: evidence_detail_panel
 element_map:
   final_answer: summary_card
+input_friction_audit:
+  - input: "依頼者"
+    source: "already_known"
+    reuse_strategy: "inherit from selected work request"
+    shown_as: "read-only object header with change action"
+  - input: "例外理由"
+    source: "exception_only"
+    reuse_strategy: "ask only after override or escalation"
+    shown_as: "conditional reason note"
 area_budget:
   final_answer: large
   raw_logs: collapsed
@@ -68,6 +83,13 @@ states:
   - running
   - verified
   - failed
+primary_path:
+  previous_trigger: "依頼を送信"
+  next_trigger: "評価NGを修正"
+  why_next_screen_follows: "A failed evidence check requires editing the rubric and prompt."
+  supporting_surfaces:
+    - raw_logs
+    - library
 evidence_needs:
   - input
   - output
@@ -84,6 +106,23 @@ Use `information-shape-catalog.md` before choosing components. A UI plan should 
 
 If a plan says only `form`, `table`, `card`, `modal`, or `dashboard`, the information pattern is still underspecified.
 
+## Input Friction Audit
+
+Use `input-friction-patterns.md` whenever a screen contains user input, confirmation, approval, setup, repeated rows, uploaded/extracted data, role handoff, or exception reasons.
+
+Do not treat input burden as field count only. The most frustrating burden is repeated meaning: entering the same identity, address, requester, assignee, reason, schedule, item, or extracted value again because the UI has not carried it forward.
+
+For each input unit, decide whether it is:
+
+- already known from a selected object, previous step, profile, integration, upload, or history;
+- same as an existing value and should default to reuse;
+- system-inferred and should be corrected, not typed from blank;
+- selected from suggestions, templates, recent values, or saved presets;
+- genuinely new information;
+- exception-only and should appear only after override, rejection, escalation, or policy deviation.
+
+Redesign before drawing if the plan asks the user to retype known values, create many similar items one by one, provide reason text on the happy path, or fill information owned by another role.
+
 ## Pattern Layers
 
 Use four layers before drawing:
@@ -94,6 +133,27 @@ Use four layers before drawing:
 - Input/display element: atomic controls and visual elements, chosen from `input-element-catalog.md`.
 
 Do not jump from a whole-screen pattern directly to buttons and cards when the screen contains evidence, queues, timelines, validation, permissions, diffs, metrics, alerts, empty states, or communication threads. Classify the input/view intent first, because the same object needs different UI when the user is entering it, scanning it, verifying it, comparing it, or recovering from it.
+
+## Flow Causality
+
+For multi-screen flows, evaluate the path before drawing. A screen sequence is valid only when each next screen is caused by a user action, system event, validation result, or risk/recovery condition from the previous screen.
+
+Use this check for every transition:
+
+- The source screen has enough information for the user to decide the trigger action.
+- The trigger label says the exact action or event, not the destination.
+- The target screen is the natural consequence of the trigger.
+- The target screen answers the next user question created by the previous screen.
+- Supporting surfaces such as libraries, templates, metrics, logs, and settings do not interrupt the main path unless they are the object being decided.
+- If a state can block the path, the flow shows validation, failure, recovery, retry, edit, skip, or undo before pretending the path is complete.
+
+Common repairs:
+
+- If a metrics screen is used to diagnose a problem, follow it with a plan, practice, review, or recovery screen, not a generic library.
+- If a library, template gallery, or saved collection is useful but not mandatory, make it a supporting surface or optional branch instead of the next primary screen.
+- If a triage screen asks for a decision, follow it with a review, assignment, resolution, or confirmation surface before broad monitoring.
+- If checkout, booking, import, connection, generation, or approval can fail, show the failure reason and recovery action in the same flow.
+- If a user correction changes flow order, update the UI Element Plan as a flow patch before redrawing.
 
 ## Information Shapes
 
@@ -145,6 +205,12 @@ Redraw from the plan when:
 - state and evidence are represented only as generic badges;
 - input/view information patterns are not identified before choosing controls;
 - information units are not decomposed before choosing controls;
+- repeated same-meaning input is not audited before choosing controls;
+- already-known, same-as, extracted, or role-owned values are shown as blank fields;
+- repeated similar items have no copy, template, bulk-add, import, or generation affordance;
+- a supporting surface interrupts the primary path without a user decision that requires it;
+- a transition label names a destination instead of the trigger that caused the transition;
+- a failure, empty, blocked, or recovery state is named in the plan but not represented in the wireframe;
 - rejected patterns are not named, so the same mistake can return.
 
 

@@ -1,6 +1,6 @@
 # Design System After Wireframe
 
-Use this reference after the wireframe proves the flow and before creating a high-fidelity SVG screen. The goal is to make visual decisions from product purpose and brand character, not from generic polish.
+Use this reference after `UI_PLAN.md` and the wireframe prove the flow, and before creating a high-fidelity SVG screen. The goal is to make visual decisions from product purpose, handled information, user role, and brand character, not from generic polish.
 
 This reference adopts useful ideas from Google Labs `design.md`: maintain a persistent `DESIGN.md` file that combines machine-readable tokens with human-readable design rationale. Tokens give exact values; prose explains why those values exist and how to apply them.
 
@@ -31,12 +31,14 @@ Define these before styling:
 - Interaction risk: reversible, reviewable, destructive, permissioned, payment-related, or public-facing.
 - Environment: desktop, mobile, large display, embedded widget, dark room, field use, or presentation.
 - Source material: code, screenshots, brand files, documents, decks, competitors, or none.
+- Planning source: `UI_PLAN.md` screen inventory, information hierarchy, input friction audit, state language, and evidence model.
 
 ## Design System Contract
 
 Create a compact system before drawing the final screen. When the system needs to persist across screens, write it as `DESIGN.md`.
 
 - Source basis: supplied assets, inferred brief, competitor reference, or provisional assumption.
+- Planning basis: which `UI_PLAN.md` decisions the system must support, such as dense audit work, guided consumer flow, clinical confidence, field operation, or editorial brand.
 - Visual thesis: one sentence describing mood, material, density, and energy.
 - Typography: family fallback, scale, weight, line height, numeral style, and where display type is allowed.
 - Color roles: background, surface, text, muted text, border, accent, focus, success, warning, danger, info, and selected.

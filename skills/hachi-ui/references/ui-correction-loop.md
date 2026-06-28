@@ -4,14 +4,14 @@ Use this reference when the user critiques or revises a generated UI. Treat corr
 
 ## Purpose
 
-Do not handle corrections as cosmetic tweaks by default. Classify each correction as a pattern, element, hierarchy, area, state, copy, direction, or visual-system issue, then patch the UI Element Plan.
+Do not handle corrections as cosmetic tweaks by default. Classify each correction as a pattern, element, hierarchy, area, state, input friction, copy, direction, or visual-system issue, then patch `UI_PLAN.md` or the UI Element Plan before redrawing.
 
 ## Correction Classes
 
 ```yaml
 correction:
   user_text: "3列ではなく2列にしたい"
-  class: screen_pattern | element_choice | hierarchy | area_budget | object_model | state | evidence | copy | visual_system | direction
+  class: screen_pattern | element_choice | hierarchy | area_budget | object_model | state | evidence | input_friction | copy | visual_system | direction
   plan_patch: "Change from three-column dashboard to left pane plus stacked main work surface."
   redraw_scope: whole_screen | region | element | copy_only
 ```
@@ -35,6 +35,12 @@ correction:
 - Class: speculative_control.
 - Patch: remove controls that do not affect the current user decision.
 - Redraw: local region.
+
+### Remove repeated input
+
+- Class: input_friction + element_choice.
+- Patch: replace blank duplicate fields with inherited, same-as, extracted-value correction, template, bulk-add, or owner handoff entries in `UI_PLAN.md`.
+- Redraw: local region or form screen.
 
 ### Add AI agent auditability
 
@@ -61,8 +67,9 @@ For every meaningful correction:
 1. Quote or summarize the user correction.
 2. Classify the correction.
 3. Patch product thesis, object model, pattern, element map, area budget, gaze route, state, or evidence needs.
-4. Redraw only the necessary scope.
-5. Re-run the relevant rejection checks.
+4. Update `UI_PLAN.md` first when the correction affects screen purpose, information units, input friction, flow causality, state, or visual direction.
+5. Redraw only the necessary scope.
+6. Re-run the relevant rejection checks.
 
 ## Rejection Checks
 

@@ -50,7 +50,7 @@ Required text:
 - `SCREEN 01 CONTRACT`
 - `問い: ...`
 - `主操作: ...`
-- Add `退避`, `副操作`, `失敗`, or `空状態` when relevant.
+- Add `種別`, `退避`, `副操作`, `失敗`, or `空状態` when relevant.
 
 Contract rules:
 
@@ -94,6 +94,17 @@ Every flow must include:
 
 Do not add a separate screen for every secondary action. If a secondary action matters, annotate its destination in the contract or add a lighter arrow.
 
+## Per-Screen Minimum UI
+
+Inside each screen frame, draw at least these semantic units:
+
+- a dominant unit that answers the contract question;
+- a compact state or exception unit, such as empty, blocked, invalid, failed, waiting, selected, or confirmed;
+- a primary action control and one retreat control when retreat is plausible;
+- a supporting evidence, detail, or option unit when the action would otherwise feel unjustified.
+
+For AI, audit, moderation, checkout, booking, approval, import, and learning progress flows, show the reason or evidence that makes the next action trustworthy. A badge alone is not enough.
+
 ## Naming And Layers
 
 Use stable SVG groups:
@@ -117,6 +128,8 @@ Redraw before delivery if any item fails:
 - The target screen does not match the trigger.
 - The primary action is unclear on any screen.
 - A required failure or validation state is missing.
+- A required recovery, edit, retry, undo, or cancellation path is missing.
+- A supporting surface such as metrics, library, logs, or templates becomes the next screen without being the user's required decision.
 - Japanese user requests produce English UI labels.
 - Text overlaps, clips, or exceeds its button/card.
 - The SVG canvas crops any screen, label, or arrow.

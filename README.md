@@ -1,29 +1,42 @@
 # Hachi UI Skill
 
-Hachi UI is an agent skill for creating editable UI prototype screens as standalone SVG files. It is optimized for product UI work that needs to move from semantic object/decision modeling, to semantic UI planning, to input/view information classification, to whole-screen pattern selection, to information-unit decomposition, to input/display element selection, to a clear wireframe, to a reusable design system, and then to a higher-fidelity SVG prototype.
+Hachi UI is an agent skill for creating editable UI prototype screens as standalone SVG files. It is optimized for product UI work that needs to move from requirements, to semantic object/decision modeling, to a central `UI_PLAN.md`, to input/view information classification, to whole-screen pattern selection, to information-unit decomposition, to input-friction reduction, to a clear wireframe, to a reusable design system, and then to a higher-fidelity SVG prototype.
 
 ## Workflow
 
 Hachi UI uses a staged workflow:
 
 1. **UI semantic design primer**: identify core objects, user decisions, information units, state, evidence, area budget, and gaze route before drawing.
-2. **Semantic UI planning**: convert the product brief into product thesis, user decisions, information units, input/view information patterns, information shapes, screen pattern choices, information-unit patterns, UI element choices, gaze route, area budget, and state/evidence requirements.
-3. **Direction and screen family planning**: for multi-screen products, propose named directions when useful, preserve the selected direction, and define the shared object model, navigation, density, and state language across screens.
-4. **Wireframe first**: define the user question, primary action, retreat path, failure state, and transition trigger.
-5. **Flow layout**: for 3-5 screen app flows, use a wide left-to-right SVG canvas instead of wrapping screens into rows.
-6. **Design system pass**: after the wireframe is clear, create or update `DESIGN.md` with design tokens and rationale.
-7. **High-fidelity SVG**: apply the design system to an editable SVG screen or screen sequence.
-8. **Verification**: render the SVG, run the smoke check, and lint `DESIGN.md` when available.
+2. **Artifact setup**: preserve reusable briefs as `requirements.md`, create `UI_PLAN.md` as the planning source of truth, and create `DESIGN.md` only after wireframe acceptance.
+3. **Semantic UI planning**: convert the product brief into product thesis, users/roles, core objects, screen inventory, information units, input/view information patterns, information shapes, screen pattern choices, information-unit patterns, flow causality, state/recovery, and evidence requirements.
+4. **Input friction audit**: avoid repeated same-meaning input, same-as fields, retyped extracted data, exception reason overuse, and role-owned fields.
+5. **Direction and screen family planning**: for multi-screen products, propose named directions when useful, preserve the selected direction, and define the shared object model, navigation, density, and state language across screens.
+6. **Wireframe first**: define the user question, primary action, retreat path, failure state, and transition trigger.
+7. **Flow layout**: for 3-5 screen app flows, use a wide left-to-right SVG canvas instead of wrapping screens into rows.
+8. **Design system pass**: after the wireframe is clear, create or update `DESIGN.md` with design tokens and rationale.
+9. **High-fidelity SVG**: apply the design system to an editable SVG screen or screen sequence.
+10. **Verification**: render the SVG, run the smoke check, and lint `DESIGN.md` when available.
 
 ## Quick Route
 
 Use the smallest route that fits the request:
 
 - **Light single screen**: semantic primer, minimal plan, wireframe, rubric.
-- **Normal app/product screen**: primer, semantic plan, information shape, screen pattern, unit pattern, input/display element, wireframe.
+- **Normal app/product screen**: primer, `UI_PLAN.md`, information shape, screen pattern, unit pattern, input friction audit, input/display element, wireframe.
 - **AI, audit, settings, import, approval, or regulated work**: normal route plus pattern quality audit and explicit evidence/provenance modeling.
 - **Multi-screen flow**: normal route plus screen family continuity, flow wireframe template, and onboarding patterns when relevant.
 - **High-fidelity or brand-sensitive work**: wireframe first, then design system and frontend art direction.
+
+## Standard Artifacts
+
+Use these files for reusable app/product work:
+
+- `requirements.md`: user-facing requirements, assumptions, users, goals, constraints, and success criteria.
+- `UI_PLAN.md`: the source of truth for product thesis, users/roles, core objects, screen inventory, flow causality, information units, input friction audit, screen family continuity, and rejected patterns.
+- `wireframe-flow.svg`: the monochrome visual flow generated from `UI_PLAN.md`.
+- `DESIGN.md`: visual system file used only after the wireframe is ready for high-fidelity styling.
+
+For small one-off screens, an SVG alone is acceptable. For multi-screen flows, prefer `requirements.md`, `UI_PLAN.md`, and `wireframe-flow.svg`.
 
 ## DESIGN.md
 
@@ -39,8 +52,10 @@ Use `DESIGN.md` when:
 Typical output:
 
 ```text
+examples/<project>/requirements.md
+examples/<project>/UI_PLAN.md
 examples/<project>/DESIGN.md
-examples/<project>/<screen-or-flow>.svg
+examples/<project>/wireframe-flow.svg
 examples/<project>/screenshots/<screen-or-flow>.png
 ```
 
@@ -113,11 +128,11 @@ This repository keeps only a small number of lightweight examples:
 - `examples/nagare-screen-family-plan.md`: screen-family continuity example for related product screens.
 - `examples/nagare-conversation-replay-test.md`: planning regression example for direction, correction, auditability, and wide editing behavior.
 
-Generated screenshots, exploratory variants, per-project `DESIGN.md` files, npm caches, and Python caches should stay untracked. Keep local validation output under `examples/` or `test/`.
+Generated screenshots, exploratory variants, per-project planning files, per-project `DESIGN.md` files, npm caches, and Python caches should stay untracked unless they are curated examples. Keep local validation output under `examples/` or `test/`.
 
 ## Pattern Quality
 
-The semantic design entry point is `skills/hachi-ui/references/ui-semantic-design-primer.md`. The screen catalog is evaluated in `skills/hachi-ui/references/screen-pattern-quality-audit.md`. Patterns below 80 should be replaced or repaired rather than used as primary guidance. The catalog is layered: input/view information patterns live in `information-shape-catalog.md`, whole-screen patterns live in `screen-pattern-catalog.md`, middle-layer information units live in `information-unit-patterns.md`, and atomic controls/displays live in `input-element-catalog.md`.
+The semantic design entry point is `skills/hachi-ui/references/ui-semantic-design-primer.md`. The standard artifact flow is defined in `skills/hachi-ui/references/ui-artifact-workflow.md`. The screen catalog is evaluated in `skills/hachi-ui/references/screen-pattern-quality-audit.md`. Patterns below 80 should be replaced or repaired rather than used as primary guidance. The catalog is layered: input/view information patterns live in `information-shape-catalog.md`, whole-screen patterns live in `screen-pattern-catalog.md`, middle-layer information units live in `information-unit-patterns.md`, input friction lives in `input-friction-patterns.md`, and atomic controls/displays live in `input-element-catalog.md`.
 
 Current pattern coverage:
 
