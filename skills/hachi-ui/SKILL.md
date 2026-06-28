@@ -97,6 +97,7 @@ For application screens, make the first pass monochrome unless the user explicit
 - For sequential flows, use the left-to-right grid in `references/flow-wireframe-template.md`; make the SVG wider instead of wrapping rows.
 - Do not judge final desktop density from the compressed flow frames. Create a full-scale `1440x1024` screen wireframe for tables, timelines, prompt editors, rubrics, evidence review, inspectors, dense forms, or long Japanese labels.
 - Label the primary action, secondary action, back/cancel path, empty state, error state, and confirmation state when relevant.
+- Give every screen a meaningful name and use it consistently in the flow contract, `UI_PLAN.md`, transition notes, and file names when applicable. Keep numeric order only as secondary metadata.
 - Label every transition arrow with the exact trigger, such as a button click, selection change, submit action, OAuth success, validation error, or generation completion.
 - Use the user's language for all UI labels and screen notes unless the user requests another locale.
 - Keep screen contracts outside the screen frame. They are review annotations, not product UI.
@@ -139,6 +140,7 @@ Iterate without asking the user when the critique points to objective defects:
 - Internal language leak: hide internal IDs, runtime names, agent names, raw logs, state variant labels, and provenance chains from the primary screen unless the current user is debugging internals; translate implementation terms into user work language before claiming 90+.
 - Detail screen overload: rebuild the screen around a human-readable state sentence, current object, current owner or actor, immediate action or no-action-needed state, one reason, and a single `詳細を開く` entry point.
 - Missing transition trigger: add explicit action labels to arrows and make the target screen match the action result.
+- Number-only screen reference: replace `Screen 1`, `Screen 2`, or `画面1` labels with meaningful screen names so corrections can target the intended surface.
 - Broken flow causality: reorder screens when a supporting surface such as metrics, saved items, templates, logs, or settings interrupts the user's primary path; make it an optional branch or compact supporting unit unless the user must decide from it.
 - Missing recovery visibility: when the plan names empty, invalid, failed, blocked, waiting, abandoned, or missed states, draw the reason and recovery action as visible UI, not only as contract text.
 - Repeated input friction: remove fields that ask for already-known, same-as, extracted, review-only, evidence-only, or role-owned values; show the source value with edit/correct/request controls instead.
@@ -195,6 +197,7 @@ Core checks:
 - The input friction audit avoids repeated same-meaning input, retyped extracted data, same-as fields, unnecessary reason fields, and role-owned fields.
 - The selected layout pattern matches the user job and object model, and weak/generic catalog patterns have been sharpened or replaced.
 - The screen contract is clear: question, state, primary action, secondary action, next screen.
+- Each screen has a meaningful name that is used consistently across `UI_PLAN.md`, flow contracts, arrows, and later correction notes.
 - Every transition has an explicit user action, system event, or validation result label.
 - UI copy uses the user's language consistently.
 - The design system follows product purpose and brand posture, not generic decoration.

@@ -66,7 +66,8 @@ Place one contract block above every screen frame. These blocks are review annot
 
 Required text:
 
-- `SCREEN 01 CONTRACT`
+- Screen name as the primary label, such as `アラート集約` or `依頼作成`.
+- Optional small metadata such as `01 / entry` or `kind: entry`; keep the number secondary.
 - `問い: ...`
 - `主操作: ...`
 - Add `種別`, `退避`, `副操作`, `失敗`, or `空状態` when relevant.
@@ -74,6 +75,7 @@ Required text:
 Contract rules:
 
 - Keep contracts outside the screen frame.
+- Do not identify screens primarily as `Screen 1`, `Screen 2`, or `画面1`. Use the screen's meaningful name so later corrections can target the right surface.
 - Use at most two text lines per contract block.
 - Do not repeat long UI explanations inside the screen.
 - If the user's language is Japanese, write contracts and UI copy in Japanese.

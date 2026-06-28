@@ -149,6 +149,7 @@ The default flow should be mostly `primary`, `recovery`, and `result`. Do not pl
 Required for each drawn screen:
 
 - one dominant information unit answering the screen contract;
+- one meaningful screen name used consistently in the contract, `UI_PLAN.md`, flow arrows, filenames when applicable, and later correction notes;
 - one visible primary action;
 - one retreat path such as back, cancel, edit, undo, or skip when the user might need it;
 - one state or exception fragment when the product can be empty, invalid, blocked, failed, waiting, or completed.
@@ -192,6 +193,7 @@ Reject and redraw if any of these are true:
 - A transition arrow is unlabeled or says only where it goes.
 - The target screen does not match the action or validation result that caused it.
 - A screen contract appears inside the product UI frame.
+- Screens are referenced primarily by number, such as `Screen 1` or `画面1`, instead of a meaningful screen name.
 - The SVG introduces screens, inputs, states, or transitions that are not represented in `UI_PLAN.md`.
 - A sequential flow wraps into rows even though a wider left-to-right canvas would be clearer.
 - The primary action appears before enough context to decide.
