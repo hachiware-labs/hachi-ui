@@ -39,6 +39,8 @@ Do not promote a compressed flow frame directly to visual design when it represe
 
 Use realistic UI density in that full-scale wireframe: auxiliary text around `12px`, body/table text around `13-14px`, section headings around `16-18px`, page headings around `20-24px`, plausible row heights, visible scroll regions, and controls that could exist in a real product.
 
+For a high-confidence promotion, the full-scale wireframe should use concrete sample data, not abstract placeholders: artifact names, diff summaries, review criteria, stop conditions, state-specific primary actions, and an evidence chain from input to output to judgment to next instruction. If the screen has a timeline or inspector, show long-content capacity, folding rules, remaining counts, and visible scroll behavior before styling.
+
 ## Design System Contract
 
 Create a compact system before drawing the final screen. When the system needs to persist across screens, write it as `DESIGN.md`.

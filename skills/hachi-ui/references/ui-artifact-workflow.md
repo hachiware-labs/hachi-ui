@@ -6,7 +6,7 @@ Use this reference when creating an app flow, product prototype, dashboard, onbo
 
 Use these files by default:
 
-- `requirements.md`: user-visible requirements, assumptions, users, goals, constraints, and success criteria.
+- Requirements source: user-visible requirements, assumptions, users, goals, constraints, and success criteria. This may already exist as `requirements.md`, `PRD.md`, `concept.md`, `spec.md`, a product brief, an issue, an attached document, or the user's prompt. Create `requirements.md` only when requirements should be preserved and no equivalent durable source already exists.
 - `UI_PLAN.md`: the central semantic design artifact. It contains screen inventory, information units, field responsibility, input friction, flow causality, state, recovery, and rejected patterns.
 - `wireframe-flow.svg`: the monochrome visual flow generated from `UI_PLAN.md`.
 - Full-scale wireframes: create when a flow screen represents a dense desktop or mobile surface that needs real layout validation, using names such as `work-request-composer-1440.svg`, `work-run-trace-1440.svg`, or `result-review-1440.svg`.
@@ -24,13 +24,23 @@ Do not split screen list, information units, input friction, and flow causality 
 |---|---|
 | One quick screen sketch | SVG only, with a short scratch plan in the response if useful |
 | Product/app screen | `UI_PLAN.md` + SVG |
-| Multi-screen app flow | `requirements.md` + `UI_PLAN.md` + `wireframe-flow.svg` |
-| Multi-screen flow with dense desktop screen | `requirements.md` + `UI_PLAN.md` + `wireframe-flow.svg` + at least one `*-1440.svg` full-scale wireframe |
-| User gives requirements directly | Treat the prompt as requirements; create `UI_PLAN.md` and SVG, create `requirements.md` only if the work should be reusable |
+| Multi-screen app flow | Requirements source + `UI_PLAN.md` + `wireframe-flow.svg` |
+| Multi-screen flow with dense desktop screen | Requirements source + `UI_PLAN.md` + `wireframe-flow.svg` + at least one `*-1440.svg` full-scale wireframe |
+| User gives requirements directly | Treat the prompt as the requirements source; create `UI_PLAN.md` and SVG, create `requirements.md` only if the work should be reusable and no equivalent durable source exists |
 | High-fidelity or branded pass | Add `DESIGN.md` after the wireframe is accepted |
 | Evaluation or benchmark pass | Add or update `evaluation.md` |
 
 Legacy note: existing `semantic-plan.md` files can be read as older `UI_PLAN.md` equivalents, but new work should use `UI_PLAN.md`.
+
+## Requirements Source Rule
+
+Before creating `requirements.md`, look for an existing requirements-bearing source near the work:
+
+- `requirements.md`, `PRD.md`, `concept.md`, `spec.md`, `product-brief.md`, issue text, attached documents, or the user's prompt;
+- product goals, users, workflows, constraints, data requirements, states, and success criteria inside those sources;
+- explicit open questions that materially affect the UI.
+
+Do not duplicate an existing PRD, concept, or spec into a new `requirements.md` just to satisfy a filename convention. Reference the chosen requirements source from `UI_PLAN.md`, and create `requirements.md` only when the requirements need a durable local artifact and no equivalent source exists.
 
 ## UI_PLAN.md Template
 
@@ -108,7 +118,7 @@ Only include questions that materially change the UI.
 - Classify field responsibility before drawing form controls. Do not convert all required details into visible text inputs.
 - Use `wireframe-flow.svg` for navigation and state flow only. Do not use compressed flow frames to judge final font size, table density, editor capacity, sidebar width, inspector width, line wrapping, or whether controls fit above the fold.
 - Before `DESIGN.md` or high-fidelity styling, create a full-scale wireframe when a screen contains a table, timeline, prompt editor, rubric, evidence review, inspector, dense form, or long Japanese labels.
-- Keep `requirements.md` user-facing and concise. Do not bury design decisions there.
+- Keep the requirements source user-facing and concise. Do not bury design decisions there.
 - Keep `DESIGN.md` visual-system-focused. Do not duplicate all screen inventory there.
 - If the SVG and `UI_PLAN.md` disagree, fix the plan first, then redraw.
 

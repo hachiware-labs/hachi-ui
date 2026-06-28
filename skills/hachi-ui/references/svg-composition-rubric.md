@@ -40,11 +40,17 @@ Ask these before accepting the screen:
 - Are lines, nodes, grids, arrows, density, and backgrounds used to explain relationships or flow?
 - Is there a clear aesthetic direction beyond generic clean UI, generic cards, or decorative chrome?
 - Are current state, action priority, disabled/loading/error/empty states, and recovery paths represented when relevant?
+- In full-scale screens, do concrete artifact names, diff summaries, review criteria, and stop conditions replace abstract placeholder labels?
+- Does the screen show state variants such as running, question-needed, recovery-needed, approval-waiting, failed, or completed when those affect operation?
+- Does the evidence inspector show a readable chain of input, output, judgment, and next instruction?
+- Does the primary action change by state instead of using vague labels such as `Next step` or `Continue`?
 - Does the screen avoid asking for the same identity, value, reason, schedule, row, or extracted data more than once?
 - Are required details classified by field responsibility before they become controls?
 - Are repeated similar items supported by copy, template, bulk-add, import, or generation controls?
 - Are exception reasons requested only after exception actions?
 - If this is a compressed flow frame, has dense desktop UI been validated separately before judging final font size, row density, editor capacity, inspector width, or above-the-fold controls?
+- In full-scale screens, are scroll capacity, folded sections, remaining item counts, and long evidence/timeline behavior visible?
+- Is the main region visually dominant over context and inspector regions, instead of presenting equal-strength columns?
 - Would longer labels, changed data, or a narrower preview break the layout?
 
 ## Repair Playbook
@@ -55,6 +61,10 @@ Ask these before accepting the screen:
 - Flow causality is weak: reorder screens so the main path moves through required decisions, recovery, and result; move libraries, templates, metrics, settings, or logs into supporting units unless they are the required decision.
 - Area budget is wrong: move heavy editors, rubrics, prompts, logs, or evidence review to a wider surface.
 - Density is unproven: create a full-scale `1440x1024` screen wireframe before judging tables, timelines, editors, rubrics, evidence review, inspectors, long Japanese labels, or final visual design.
+- Data is too abstract: replace generic labels with concrete artifacts, diffs, review criteria, stop conditions, and example evidence records.
+- State operations are vague: add state variants and state-specific primary actions, such as review, answer, recover, approve, retry, or hand off.
+- Evidence inspector is thin: show input, output, judgment, and next instruction as connected evidence, not as unrelated notes.
+- Scroll behavior is unproven: add long timeline/evidence rows, folded sections, visible scroll track, and remaining count.
 - Priority is flat: reduce equal-card layouts and create a dominant anchor with quieter supporting regions.
 - Gaze path is weak: add meaningful alignment, flow lines, spatial grouping, or a Z/F/center-out structure.
 - SVG is decorative: replace ornamental shapes with process lanes, relation lines, status fields, before/after geometry, or bottleneck emphasis.

@@ -1,13 +1,13 @@
 # Hachi UI Skill
 
-Hachi UI is an agent skill for creating editable UI prototype screens as standalone SVG files. It is optimized for product UI work that needs to move from requirements, to semantic object/decision modeling, to a central `UI_PLAN.md`, to input/view information classification, to field responsibility classification, to whole-screen pattern selection, to information-unit decomposition, to input-friction reduction, to a clear wireframe, to a reusable design system, and then to a higher-fidelity SVG prototype.
+Hachi UI is an agent skill for creating editable UI prototype screens as standalone SVG files. It is optimized for product UI work that needs to move from a requirements source, to semantic object/decision modeling, to a central `UI_PLAN.md`, to input/view information classification, to field responsibility classification, to whole-screen pattern selection, to information-unit decomposition, to input-friction reduction, to a clear wireframe, to a reusable design system, and then to a higher-fidelity SVG prototype.
 
 ## Workflow
 
 Hachi UI uses a staged workflow:
 
 1. **UI semantic design primer**: identify core objects, user decisions, information units, state, evidence, area budget, and gaze route before drawing.
-2. **Artifact setup**: preserve reusable briefs as `requirements.md`, create `UI_PLAN.md` as the planning source of truth, and create `DESIGN.md` only after wireframe acceptance.
+2. **Artifact setup**: identify the requirements source, create `UI_PLAN.md` as the planning source of truth, preserve requirements as `requirements.md` only when no equivalent durable source exists, and create `DESIGN.md` only after wireframe acceptance.
 3. **Semantic UI planning**: convert the product brief into product thesis, users/roles, core objects, screen inventory, information units, input/view information patterns, information shapes, screen pattern choices, information-unit patterns, flow causality, state/recovery, and evidence requirements.
 4. **Field responsibility classification**: split required details into user input, user selection, auto-filled, review-only, exception-only input, and evidence/display before drawing controls.
 5. **Input friction audit**: avoid repeated same-meaning input, same-as fields, retyped extracted data, exception reason overuse, and role-owned fields.
@@ -33,13 +33,13 @@ Use the smallest route that fits the request:
 
 Use these files for reusable app/product work:
 
-- `requirements.md`: user-facing requirements, assumptions, users, goals, constraints, and success criteria.
+- Requirements source: a user-facing source for requirements, assumptions, users, goals, constraints, and success criteria. This may be an existing `requirements.md`, `PRD.md`, `concept.md`, `spec.md`, product brief, issue, attached document, or the user's prompt. Create `requirements.md` only when the requirements should be preserved and no equivalent source already exists.
 - `UI_PLAN.md`: the source of truth for product thesis, users/roles, core objects, screen inventory, flow causality, information units, field responsibility matrix, input friction audit, screen family continuity, and rejected patterns.
 - `wireframe-flow.svg`: the monochrome visual flow generated from `UI_PLAN.md`.
 - `*-1440.svg`: full-scale desktop wireframe used to validate real UI density for tables, timelines, editors, rubrics, evidence review, inspectors, dense forms, and long Japanese labels.
 - `DESIGN.md`: visual system file used only after the wireframe is ready for high-fidelity styling.
 
-For small one-off screens, an SVG alone is acceptable. For multi-screen flows, prefer `requirements.md`, `UI_PLAN.md`, and `wireframe-flow.svg`.
+For small one-off screens, an SVG alone is acceptable. For multi-screen flows, prefer a requirements source, `UI_PLAN.md`, and `wireframe-flow.svg`.
 Do not treat `wireframe-flow.svg` as proof that final desktop density works. It validates navigation and state flow; full-scale screens validate actual layout capacity.
 
 ## DESIGN.md
@@ -56,7 +56,7 @@ Use `DESIGN.md` when:
 Typical output:
 
 ```text
-examples/<project>/requirements.md
+examples/<project>/requirements.md  # or an existing PRD.md / concept.md / spec.md
 examples/<project>/UI_PLAN.md
 examples/<project>/DESIGN.md
 examples/<project>/wireframe-flow.svg
@@ -133,7 +133,7 @@ This repository keeps only a small number of lightweight examples:
 - `examples/nagare-screen-family-plan.md`: screen-family continuity example for related product screens.
 - `examples/nagare-conversation-replay-test.md`: planning regression example for direction, correction, auditability, and wide editing behavior.
 
-Generated screenshots, exploratory variants, per-project planning files, per-project `DESIGN.md` files, npm caches, and Python caches should stay untracked unless they are curated examples. Keep local validation output under `examples/` or `test/`.
+Generated screenshots, exploratory variants, per-project requirements/planning files, per-project `DESIGN.md` files, npm caches, and Python caches should stay untracked unless they are curated examples. Keep local validation output under `examples/` or `test/`.
 
 ## Pattern Quality
 
