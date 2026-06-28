@@ -41,9 +41,13 @@ Ask these before accepting the screen:
 - Is there a clear aesthetic direction beyond generic clean UI, generic cards, or decorative chrome?
 - Are current state, action priority, disabled/loading/error/empty states, and recovery paths represented when relevant?
 - In full-scale screens, do concrete artifact names, diff summaries, review criteria, and stop conditions replace abstract placeholder labels?
-- Does the screen show state variants such as running, question-needed, recovery-needed, approval-waiting, failed, or completed when those affect operation?
-- Does the evidence inspector show a readable chain of input, output, judgment, and next instruction?
-- Does the primary action change by state instead of using vague labels such as `Next step` or `Continue`?
+- In non-AI product screens, does the main full-scale structure match the domain's operational object instead of a generic table, such as incident ledger, receipt exception ledger, booking hold board, weakness map, moderation queue, clinic board, evidence packet, scorecard ledger, or recovery timeline?
+- If the full-scale screen came from a flow frame, does the largest region answer that source screen's exact user question, object, and pattern?
+- Is a ledger, board, or queue used only when the source screen's job really requires simultaneous comparison of many records?
+- Does the product screen answer one dominant user question rather than displaying every rubric proof item?
+- Are state variants shown in the product screen only when the real product would show them simultaneously?
+- Is the current state's primary action clear, with inactive state-specific actions moved to variant frames, external annotations, or `UI_PLAN.md`?
+- Does selected supporting detail show only the evidence needed for the current decision, while full evidence chains and review criteria stay collapsed or external unless the current task is diagnostic review?
 - Does the screen avoid asking for the same identity, value, reason, schedule, row, or extracted data more than once?
 - Are required details classified by field responsibility before they become controls?
 - Are repeated similar items supported by copy, template, bulk-add, import, or generation controls?
@@ -51,7 +55,19 @@ Ask these before accepting the screen:
 - If this is a compressed flow frame, has dense desktop UI been validated separately before judging final font size, row density, editor capacity, inspector width, or above-the-fold controls?
 - In full-scale screens, are scroll capacity, folded sections, remaining item counts, and long evidence/timeline behavior visible?
 - Is the main region visually dominant over context and inspector regions, instead of presenting equal-strength columns?
+- Is the area budget plausible: 50-70% primary decision surface, 15-30% selected support, 0-20% diagnostics, and no raw logs initially unless failure/debug is current?
 - Would longer labels, changed data, or a narrower preview break the layout?
+
+## Overexposure Penalties
+
+Penalize overexposed information when:
+
+- more than one dominant user question is visible;
+- the largest region answers a different question than the selected source screen;
+- rubric evidence is displayed as product UI instead of plan annotation;
+- diagnostic details compete with the primary action;
+- state variants appear as controls even though they are not available in the current state;
+- the screen feels like a system audit sheet rather than a user decision surface.
 
 ## Repair Playbook
 
@@ -62,9 +78,13 @@ Ask these before accepting the screen:
 - Area budget is wrong: move heavy editors, rubrics, prompts, logs, or evidence review to a wider surface.
 - Density is unproven: create a full-scale `1440x1024` screen wireframe before judging tables, timelines, editors, rubrics, evidence review, inspectors, long Japanese labels, or final visual design.
 - Data is too abstract: replace generic labels with concrete artifacts, diffs, review criteria, stop conditions, and example evidence records.
+- Domain structure is generic: rename and reshape the primary surface around the product's real operational object before tuning spacing.
+- Source-screen alignment is wrong: rebuild the full-scale screen from the selected flow frame's question, object, and pattern instead of reusing an app-wide ledger, board, or map.
 - State operations are vague: add state variants and state-specific primary actions, such as review, answer, recover, approve, retry, or hand off.
-- Evidence inspector is thin: show input, output, judgment, and next instruction as connected evidence, not as unrelated notes.
-- Scroll behavior is unproven: add long timeline/evidence rows, folded sections, visible scroll track, and remaining count.
+- State variants are overexposed: move inactive states to separate variant frames, state sheets, external annotations, or `UI_PLAN.md`.
+- Evidence inspector is thin: show selected input, output, judgment, and next instruction only when they support the current decision; collapse or externalize the full chain when it would compete with the primary action.
+- Scroll behavior is unproven: add folded sections, visible scroll track, and remaining count without turning diagnostics into the main surface.
+- Rubric proof is overexposed: move secondary proof items out of the product UI and into plan annotations, external notes, or collapsed states.
 - Priority is flat: reduce equal-card layouts and create a dominant anchor with quieter supporting regions.
 - Gaze path is weak: add meaningful alignment, flow lines, spatial grouping, or a Z/F/center-out structure.
 - SVG is decorative: replace ornamental shapes with process lanes, relation lines, status fields, before/after geometry, or bottleneck emphasis.

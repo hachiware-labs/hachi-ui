@@ -61,15 +61,46 @@ When `UI_PLAN.md` exists, update it before changing the wireframe. Do not make t
 
 テーブル、タイムライン、プロンプトエディタ、ルーブリック、証跡レビュー、インスペクターを含む画面は、ビジュアルデザインへ進む前にフルスケール版を作成してください。
 
-90点台を狙うフルスケール画面では、次の具体性まで描いてください:
+90点台を狙うフルスケール画面では、次の具体性を持たせてください。ただし、すべてをプロダクト画面の常時表示に入れないでください。`decision-surface-discipline.md` に従い、主画面、選択詳細、折りたたみ診断、外部注釈、別バリアントフレーム、`UI_PLAN.md` のどこで証明するかを分けます。
 
 - 実データの具体性: 抽象ラベルだけでなく、成果物名、差分概要、レビュー観点、次の停止条件が読めること。
-- 状態バリエーション: 処理中だけでなく、質問あり、回復が必要、承認待ち、失敗、完了などの断片が同じ画面内で確認できること。
-- 証跡密度: インスペクターや証跡ペインに `入力 -> 出力 -> 判断 -> 次の指示` のつながりが見えること。
-- 状態別主操作: `次へ` のような汎用操作ではなく、状態に応じて `Reviewを実行`、`質問に回答`、`回復案を見る`、`承認を依頼` のように操作が変わること。
-- スクロール検証: 長いタイムラインや証跡が入った時の表示容量、折りたたみルール、残件数、スクロール位置がわかること。
+- 状態バリエーション: 実プロダクトが同時に見せる場合だけ主画面に置き、それ以外は別バリアントフレーム、外部注釈、状態表、または `UI_PLAN.md` に分離すること。
+- 証跡密度: 現在の判断に必要な選択中の証跡だけを表示し、完全な `入力 -> 出力 -> 判断 -> 次の指示` は折りたたみ、診断ビュー、外部注釈、または計画文書で証明すること。
+- 状態別主操作: 現在状態の主操作を明確にし、他状態の操作は実画面で同時に選べる場合を除き、バリアントや外部注釈で示すこと。
+- スクロール検証: 長いタイムラインや証跡が入った時の表示容量、折りたたみルール、残件数、スクロール位置を、主操作と競合しない場所で示すこと。
 - 視線誘導: 主領域、文脈領域、証跡領域の強弱を明確にし、均等な3カラムに見せないこと。
 - プロダクト固有性: ledger、agent handoff、evidence trail、run recordなど、対象プロダクトらしい構造をモノクロでも表現すること。
+
+Nagare以外の業務アプリでも、汎用の表テンプレートだけでは90点台にしないでください。フルスケール画面は、そのプロダクト固有の運用単位を主領域にしてください。ただし、アプリ全体の代表構造ではなく、選ばれた元画面の問い、対象、パターンに合わせます。キュー画面なら `incident ledger`、`moderation decision queue`、`scorecard ledger` が自然です。一方、緩和確認なら確認ゲート、レッスンなら問題・回答・ヒント面、現地作業なら手順ステッパーと安全確認が主領域になります。
+
+各フルスケール画面では、次をどこかで証明してください。ただし、プロダクト画面内の常時表示は、1つの支配的なユーザー問いに必要なものへ絞ります:
+
+- 5件以上の具体レコード、状態、対象名、判断材料、主操作。
+- 状態別主操作の断片: `質問に回答`、`回復案を見る`、`承認する`、`再試行`、`完了を閉じる` など。
+- 選択中レコードの証跡チェーン: `入力 -> 出力 -> 判断 -> 次の指示`。
+- 長い一覧の表示容量: 折りたたみ数、残件数、スクロール位置、または表示範囲。
+- 入力負荷軽減: 既知値の引き継ぎ、抽出値の修正、選択式理由、テンプレート、複製、一括処理のいずれか。
+
+## Decision Surface Discipline
+
+フルスケール画面は、利用可能な情報を全部並べるチェックリストではありません。必ず1つの支配的なユーザー問いに答えてください。
+
+フロー枠から実寸画面を作る場合、最大面積の主領域は元画面の問いと一致していなければなりません。選んだ画面が `検査結果確認`、`レッスン`、`現地作業`、`緩和確認` なら、それぞれ検査値レビュー、学習課題、作業手順、安全な復旧確認を主面にします。アプリ固有だからといって、全画面を同じ台帳、ボード、リストに置き換えないでください。
+
+表示する情報は3層に分けます:
+
+1. 常時表示の判断面: 現在状態、主対象、担当者/実行主体、即時の主操作、短い結果または進捗要約。
+2. 選択中の補助詳細: 現在の判断を支える1つのタイムライン項目、成果物、証跡、検証結果、キュー項目、またはレコード。
+3. 折りたたみまたは別画面の診断詳細: raw log、完全な証跡チェーン、割当解決、ポリシー説明、詳細なレビュー基準、現在状態ではない状態バリエーション。
+
+面積配分の目安:
+
+- `50-70%`: 主作業/判断面。
+- `15-30%`: 選択中の補助文脈。
+- `0-20%`: 二次診断。
+- `0%`: raw log の初期表示。ただし現在状態が failure/debug の場合を除く。
+
+ルーブリック項目を証明するために、全項目をプロダクトUIへ露出しないでください。二次的な証明は `UI_PLAN.md`、画面外注釈、バリアントフレーム、状態シート、折りたたみ状態で扱います。
 
 ## Screen Contract
 
@@ -172,6 +203,11 @@ Reject and redraw if any of these are true:
 - Exception reason fields appear before the user chooses an exception action.
 - The selected layout pattern fights the object model.
 - The screen is split into two large panes without a clear reason both must stay visible.
+- The screen exposes rubric proof items as product UI and competes with the user's immediate decision.
+- The full-scale screen answers a different dominant question than the source flow screen.
+- An app-level ledger, board, or map overrides a source screen that should be a gate, editor, lesson, procedure, review, or handoff surface.
+- More than one dominant user question is visible.
+- Diagnostic details, inactive state variants, or raw logs compete with the primary action.
 - The wireframe depends on color to explain state.
 - The flow skips setup, permissions, import, or validation when those are necessary.
 

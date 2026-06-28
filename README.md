@@ -14,10 +14,11 @@ Hachi UI uses a staged workflow:
 6. **Direction and screen family planning**: for multi-screen products, propose named directions when useful, preserve the selected direction, and define the shared object model, navigation, density, and state language across screens.
 7. **Wireframe first**: define the user question, primary action, retreat path, failure state, and transition trigger.
 8. **Flow layout**: for 3-5 screen app flows, use a wide left-to-right SVG canvas instead of wrapping screens into rows.
-9. **Full-scale screen validation**: when a flow frame represents a dense desktop surface, create at least one `1440x1024` screen wireframe before visual design.
-10. **Design system pass**: after the wireframe is clear, create or update `DESIGN.md` with design tokens and rationale.
-11. **High-fidelity SVG**: apply the design system to an editable SVG screen or screen sequence.
-12. **Verification**: render the SVG, run the smoke check, and lint `DESIGN.md` when available.
+9. **Decision surface discipline**: for full-scale screens, keep the product UI focused on one dominant user question and move secondary proof to selected detail, collapsed diagnostics, annotations, variant frames, or `UI_PLAN.md`.
+10. **Full-scale screen validation**: when a flow frame represents a dense desktop surface, create at least one `1440x1024` screen wireframe before visual design.
+11. **Design system pass**: after the wireframe is clear, create or update `DESIGN.md` with design tokens and rationale.
+12. **High-fidelity SVG**: apply the design system to an editable SVG screen or screen sequence.
+13. **Verification**: render the SVG, run the smoke check, and lint `DESIGN.md` when available.
 
 ## Quick Route
 
@@ -137,7 +138,7 @@ Generated screenshots, exploratory variants, per-project requirements/planning f
 
 ## Pattern Quality
 
-The semantic design entry point is `skills/hachi-ui/references/ui-semantic-design-primer.md`. The standard artifact flow is defined in `skills/hachi-ui/references/ui-artifact-workflow.md`. The screen catalog is evaluated in `skills/hachi-ui/references/screen-pattern-quality-audit.md`. Patterns below 80 should be replaced or repaired rather than used as primary guidance. The catalog is layered: input/view information patterns live in `information-shape-catalog.md`, field responsibility and repeated-input repair live in `input-friction-patterns.md`, whole-screen patterns live in `screen-pattern-catalog.md`, middle-layer information units live in `information-unit-patterns.md`, and atomic controls/displays live in `input-element-catalog.md`.
+The semantic design entry point is `skills/hachi-ui/references/ui-semantic-design-primer.md`. The standard artifact flow is defined in `skills/hachi-ui/references/ui-artifact-workflow.md`. Full-scale visibility is controlled by `skills/hachi-ui/references/decision-surface-discipline.md`. The screen catalog is evaluated in `skills/hachi-ui/references/screen-pattern-quality-audit.md`. Patterns below 80 should be replaced or repaired rather than used as primary guidance. The catalog is layered: input/view information patterns live in `information-shape-catalog.md`, field responsibility and repeated-input repair live in `input-friction-patterns.md`, whole-screen patterns live in `screen-pattern-catalog.md`, middle-layer information units live in `information-unit-patterns.md`, and atomic controls/displays live in `input-element-catalog.md`.
 
 Current pattern coverage:
 
